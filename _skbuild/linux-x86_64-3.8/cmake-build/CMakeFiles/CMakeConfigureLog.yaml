@@ -1,0 +1,1325 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      The system is: Linux - 4.18.0-305.25.1.el8_4.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/3.29.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/3.29.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pwKx2x"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pwKx2x"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pwKx2x'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_40384
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   -v -o CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -c /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1 -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccqMoYEX.s
+        GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/work/y07/shared/cirrus-software/gcc/10.2.0/include"
+          as it is a non-system directory that duplicates a system directory
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+         /usr/local/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: b305c1340ff80b7284f00bc26bce57eb
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o /tmp/ccqMoYEX.s
+        GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc  -v -Wl,-v CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -o cmTC_40384   && :
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc
+        COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_40384' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0RUaIW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_40384 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        collect2 version 10.2.0
+        /usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0RUaIW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_40384 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        GNU ld version 2.30-93.el8
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_40384' '-mtune=generic' '-march=x86-64'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+          add: [/usr/local/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed;/usr/local/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pwKx2x']
+        ignore line: []
+        ignore line: [Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_40384]
+        ignore line: [[1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   -v -o CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -c /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1 -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccqMoYEX.s]
+        ignore line: [GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/work/y07/shared/cirrus-software/gcc/10.2.0/include"]
+        ignore line: [  as it is a non-system directory that duplicates a system directory]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: b305c1340ff80b7284f00bc26bce57eb]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o /tmp/ccqMoYEX.s]
+        ignore line: [GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [[2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc  -v -Wl -v CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -o cmTC_40384   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_40384' '-mtune=generic' '-march=x86-64']
+        link line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0RUaIW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_40384 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc0RUaIW.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_40384] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 10.2.0]
+        ignore line: [/usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0RUaIW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_40384 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_40384.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc;/work/y07/shared/cirrus-software/gcc/10.2.0/lib64;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64;/lib64;/usr/lib64;/work/y07/shared/cirrus-software/gcc/10.2.0/lib;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.30-93.el8
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-awUA3w"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-awUA3w"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-awUA3w'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_fcd64
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++   -v -o CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -c /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cctuZui3.s
+        GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/work/y07/shared/cirrus-software/gcc/10.2.0/include"
+          as it is a non-system directory that duplicates a system directory
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+         /usr/local/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include
+         /usr/include
+        End of search list.
+        GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 2475fb1a864a64c79d5135c3677d7c56
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o /tmp/cctuZui3.s
+        GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++  -v -Wl,-v CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fcd64   && :
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++
+        COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcd64' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1f8Skm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fcd64 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        collect2 version 10.2.0
+        /usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1f8Skm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fcd64 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        GNU ld version 2.30-93.el8
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcd64' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+          add: [/usr/local/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/x86_64-pc-linux-gnu]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/backward]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/x86_64-pc-linux-gnu;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/backward;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed;/usr/local/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-awUA3w']
+        ignore line: []
+        ignore line: [Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_fcd64]
+        ignore line: [[1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++   -v -o CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -c /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE /tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cctuZui3.s]
+        ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/work/y07/shared/cirrus-software/gcc/10.2.0/include"]
+        ignore line: [  as it is a non-system directory that duplicates a system directory]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 2475fb1a864a64c79d5135c3677d7c56]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o /tmp/cctuZui3.s]
+        ignore line: [GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [[2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++  -v -Wl -v CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fcd64   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/:/work/y07/shared/cirrus-software/gcc/10.2.0/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fcd64' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1f8Skm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fcd64 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc1f8Skm.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_fcd64] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/10.2.0/lib] ==> dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 10.2.0]
+        ignore line: [/usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1f8Skm.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fcd64 /lib/../lib64/crt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib64 -L/work/y07/shared/cirrus-software/gcc/10.2.0/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_fcd64.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/10.2.0/lib] ==> [/work/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc;/work/y07/shared/cirrus-software/gcc/10.2.0/lib64;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64;/lib64;/usr/lib64;/work/y07/shared/cirrus-software/gcc/10.2.0/lib;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/tmp/pip-build-env-t9xxnc6w/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.30-93.el8
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "CMakeLists.txt:20 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-alKshz"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-alKshz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/patches/99;/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1;/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-alKshz'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_a8226
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a8226.dir/src.c.o -c /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-alKshz/src.c
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   CMakeFiles/cmTC_a8226.dir/src.c.o -o cmTC_a8226   && :
+        FAILED: cmTC_a8226 
+        : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   CMakeFiles/cmTC_a8226.dir/src.c.o -o cmTC_a8226   && :
+        CMakeFiles/cmTC_a8226.dir/src.c.o: In function `main':
+        src.c:(.text+0x2d): undefined reference to `pthread_create'
+        src.c:(.text+0x39): undefined reference to `pthread_detach'
+        src.c:(.text+0x45): undefined reference to `pthread_cancel'
+        src.c:(.text+0x56): undefined reference to `pthread_join'
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "CMakeLists.txt:20 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-Ee6oaC"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-Ee6oaC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/patches/99;/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1;/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-Ee6oaC'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_b291d
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_b291d.dir/CheckFunctionExists.c.o -c /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-Ee6oaC/CheckFunctionExists.c
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_b291d.dir/CheckFunctionExists.c.o -o cmTC_b291d  -lpthreads && :
+        FAILED: cmTC_b291d 
+        : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_b291d.dir/CheckFunctionExists.c.o -o cmTC_b291d  -lpthreads && :
+        /usr/bin/ld: cannot find -lpthreads
+        collect2: error: ld returned 1 exit status
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "CMakeLists.txt:20 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-lfdxny"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-lfdxny"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1/patches/99;/work/m23oc/m23oc/s2484724/miniconda3/envs/gmy-tool/lib/cmake/vtk-9.1;/tmp/pip-build-env-zjyrym_g/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-lfdxny'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_d16c7
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_d16c7.dir/CheckFunctionExists.c.o -c /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-lfdxny/CheckFunctionExists.c
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_d16c7.dir/CheckFunctionExists.c.o -o cmTC_d16c7  -lpthread && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:287 (check_cxx_compiler_flag)"
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:332 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:399 (_pybind11_generate_lto)"
+      - "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:250 (include)"
+      - "CMakeLists.txt:46 (find_package)"
+    checks:
+      - "Performing Test HAS_FLTO"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-MumR8Z"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-MumR8Z"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/tmp/pip-build-env-_igfg112/overlay/lib/python3.8/site-packages/skbuild/resources/cmake;/work/m23oc/m23oc/s2484724/CGAL-5.6.1/cmake/modules;/work/m23oc/m23oc/s2484724/CGAL-5.6.1/cmake/modules;/work/m23oc/m23oc/s2484724/CGAL-5.6.1/cmake/modules"
+    buildResult:
+      variable: "HAS_FLTO"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-MumR8Z'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_736da
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++ -DHAS_FLTO  -std=c++2a   -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_736da.dir/src.cxx.o -c /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-MumR8Z/src.cxx
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++   CMakeFiles/cmTC_736da.dir/src.cxx.o -o cmTC_736da  -flto && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      The system is: Linux - 4.18.0-305.25.1.el8_4.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/3.29.5/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++ 
+      Build flags: -g
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/3.29.5/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-zU1ubV"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-zU1ubV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-pg"
+      CMAKE_MODULE_PATH: "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-zU1ubV'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_2310b
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   -v -o CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -c /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1 -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -version -o /tmp/cciAQFbz.s
+        GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /work/y07/shared/cirrus-software/boost/1.84.0/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include
+         /work/y07/shared/cirrus-software/gcc/12.3.0-offload/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+         /usr/local/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: b305c1340ff80b7284f00bc26bce57eb
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o /tmp/cciAQFbz.s
+        GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc  -pg -v -Wl,-v CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -o cmTC_2310b   && :
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc
+        COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-pg' '-v' '-o' 'cmTC_2310b' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7NH5EP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2310b /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        collect2 version 10.2.0
+        /usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7NH5EP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2310b /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        GNU ld version 2.30-93.el8
+        COLLECT_GCC_OPTIONS='-pg' '-v' '-o' 'cmTC_2310b' '-mtune=generic' '-march=x86-64'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/work/y07/shared/cirrus-software/boost/1.84.0/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include]
+          add: [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+          add: [/usr/local/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/work/y07/shared/cirrus-software/boost/1.84.0/include] ==> [/work/y07/shared/cirrus-software/boost/1.84.0/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include]
+        collapse include dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/work/y07/shared/cirrus-software/boost/1.84.0/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include;/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed;/usr/local/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-zU1ubV']
+        ignore line: []
+        ignore line: [Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_2310b]
+        ignore line: [[1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc   -v -o CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -c /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1 -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -version -o /tmp/cciAQFbz.s]
+        ignore line: [GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /work/y07/shared/cirrus-software/boost/1.84.0/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include]
+        ignore line: [ /work/y07/shared/cirrus-software/gcc/12.3.0-offload/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: b305c1340ff80b7284f00bc26bce57eb]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o /tmp/cciAQFbz.s]
+        ignore line: [GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [[2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc  -pg -v -Wl -v CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -o cmTC_2310b   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-pg' '-v' '-o' 'cmTC_2310b' '-mtune=generic' '-march=x86-64']
+        link line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7NH5EP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2310b /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc7NH5EP.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_2310b] ==> ignore
+          arg [/lib/../lib64/gcrt1.o] ==> obj [/lib/../lib64/gcrt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/boost/1.84.0/lib] ==> dir [/work/y07/shared/cirrus-software/boost/1.84.0/lib]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 10.2.0]
+        ignore line: [/usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7NH5EP.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2310b /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_2310b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/lib/../lib64/gcrt1.o] ==> [/lib64/gcrt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/boost/1.84.0/lib] ==> [/work/y07/shared/cirrus-software/boost/1.84.0/lib]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib64/gcrt1.o;/lib64/crti.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc;/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64;/lib64;/usr/lib64;/work/y07/shared/cirrus-software/boost/1.84.0/lib;/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.30-93.el8
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pUckPR"
+      binary: "/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pUckPR"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-g"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-pg"
+      CMAKE_MODULE_PATH: "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/skbuild/resources/cmake"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pUckPR'
+        
+        Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_bc7e1
+        [1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++   -g    -v -o CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -c /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-g' '-v' '-o' 'CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -g -version -o /tmp/ccEHlkGf.s
+        GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"
+        ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"
+        ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /work/y07/shared/cirrus-software/boost/1.84.0/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include
+         /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include
+         /work/y07/shared/cirrus-software/gcc/12.3.0-offload/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed
+         /usr/local/include
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include
+         /usr/include
+        End of search list.
+        GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 10.2.0, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 2475fb1a864a64c79d5135c3677d7c56
+        COLLECT_GCC_OPTIONS='-g' '-v' '-o' 'CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEHlkGf.s
+        GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-g' '-v' '-o' 'CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        [2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++ -g -pg -v -Wl,-v CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bc7e1   && :
+        Using built-in specs.
+        COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++
+        COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c,c++,fortran
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 10.2.0 (GCC) 
+        COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/
+        LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-g' '-pg' '-v' '-o' 'cmTC_bc7e1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6OGcYA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_bc7e1 /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        collect2 version 10.2.0
+        /usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6OGcYA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_bc7e1 /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o
+        GNU ld version 2.30-93.el8
+        COLLECT_GCC_OPTIONS='-g' '-pg' '-v' '-o' 'cmTC_bc7e1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/work/y07/shared/cirrus-software/boost/1.84.0/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include]
+          add: [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include]
+          add: [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+          add: [/usr/local/include]
+          add: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/work/y07/shared/cirrus-software/boost/1.84.0/include] ==> [/work/y07/shared/cirrus-software/boost/1.84.0/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include]
+        collapse include dir [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include] ==> [/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include]
+        collapse include dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/x86_64-pc-linux-gnu]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/backward]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/work/y07/shared/cirrus-software/boost/1.84.0/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include;/work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include;/work/y07/shared/cirrus-software/gcc/12.3.0-offload/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/x86_64-pc-linux-gnu;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include/c++/10.2.0/backward;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed;/usr/local/include;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/CMakeScratch/TryCompile-pUckPR']
+        ignore line: []
+        ignore line: [Run Build Command(s): /work/y07/shared/cirrus-software/ninja/1.10.2/bin/ninja -v cmTC_bc7e1]
+        ignore line: [[1/2] /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++   -g    -v -o CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -c /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-o' 'CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/cc1plus -quiet -v -iprefix /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/ -D_GNU_SOURCE /tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -g -version -o /tmp/ccEHlkGf.s]
+        ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"]
+        ignore line: [ignoring duplicate directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /work/y07/shared/cirrus-software/boost/1.84.0/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nvshmem/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/comm_libs/nccl/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/math_libs/include]
+        ignore line: [ /work/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/cuda/include]
+        ignore line: [ /work/y07/shared/cirrus-software/gcc/12.3.0-offload/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/../../include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (GCC) version 10.2.0 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 10.2.0  GMP version 6.1.0  MPFR version 3.1.4  MPC version 1.0.3  isl version isl-0.18-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 2475fb1a864a64c79d5135c3677d7c56]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-o' 'CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEHlkGf.s]
+        ignore line: [GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-93.el8]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-o' 'CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [[2/2] : && /work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++ -g -pg -v -Wl -v CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bc7e1   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/work/y07/shared/cirrus-software/gcc/10.2.0/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ./configure --prefix=/work/y07/shared/cirrus-software/gcc/10.2.0 --disable-multilib --with-system-zlib --enable-languages=c c++ fortran]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 10.2.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/]
+        ignore line: [LIBRARY_PATH=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/work/y07/shared/cirrus-software/boost/1.84.0/lib/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/:/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/:/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-pg' '-v' '-o' 'cmTC_bc7e1' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2 -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6OGcYA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_bc7e1 /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc6OGcYA.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_bc7e1] ==> ignore
+          arg [/lib/../lib64/gcrt1.o] ==> obj [/lib/../lib64/gcrt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/work/y07/shared/cirrus-software/boost/1.84.0/lib] ==> dir [/work/y07/shared/cirrus-software/boost/1.84.0/lib]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+          arg [-L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib] ==> dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib]
+          arg [-L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        ignore line: [collect2 version 10.2.0]
+        ignore line: [/usr/bin/ld -plugin /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/liblto_plugin.so -plugin-opt=/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6OGcYA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_bc7e1 /lib/../lib64/gcrt1.o /lib/../lib64/crti.o /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64 -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/work/y07/shared/cirrus-software/boost/1.84.0/lib -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64 -L/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib -L/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../.. -v CMakeFiles/cmTC_bc7e1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o /lib/../lib64/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/lib/../lib64/gcrt1.o] ==> [/lib64/gcrt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o]
+        collapse obj [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib/../lib64] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../lib64] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/boost/1.84.0/lib] ==> [/work/y07/shared/cirrus-software/boost/1.84.0/lib]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64]
+        collapse library dir [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib] ==> [/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib]
+        collapse library dir [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../..] ==> [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/gcrt1.o;/lib64/crti.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtbegin.o;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc/x86_64-pc-linux-gnu/10.2.0;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib/gcc;/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib64;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib64;/lib64;/usr/lib64;/work/y07/shared/cirrus-software/boost/1.84.0/lib;/work/y07/shared/cirrus-software/gcc/12.3.0-offload/lib;/mnt/lustre/e1000/home/y07/shared/cirrus-software/gcc/10.2.0/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/tmp/pip-build-env-8bsw5xgx/overlay/lib/python3.8/site-packages/cmake/data/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:8 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.30-93.el8
+...

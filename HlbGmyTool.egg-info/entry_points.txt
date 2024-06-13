@@ -1,0 +1,7 @@
+[console_scripts]
+hlb-config2gmy = HlbGmyTool.scripts.config_to_geometry:main
+hlb-gmy-cli = HlbGmyTool.scripts.cli:main
+hlb-pro2pr2 = HlbGmyTool.scripts.pro_to_pr2:main
+
+[gui_scripts]
+hlb-gmy-gui = HlbGmyTool.scripts.gui:main[gui]

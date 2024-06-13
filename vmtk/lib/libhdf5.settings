@@ -1,0 +1,88 @@
+        SUMMARY OF THE HDF5 CONFIGURATION
+        =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.10.6
+                  Configured on: 
+                  Configured by: Unix Makefiles
+                    Host system: Linux-5.15.0-1033-azure
+              Uname information: Linux
+                       Byte sex: little-endian
+             Installation point: /opt/itk
+
+Compiling Options:
+------------------
+                     Build Mode: Release
+              Debugging Symbols: OFF
+                        Asserts: OFF
+                      Profiling: OFF
+             Optimization Level: OFF
+
+Linking Options:
+----------------
+                      Libraries: 
+  Statically Linked Executables: OFF
+                        LDFLAGS:  
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS: 
+                Extra libraries: m;dl
+                       Archiver: /usr/bin/ar
+                         Ranlib: /usr/bin/ranlib
+
+Languages:
+----------
+                              C: YES
+                     C Compiler: /usr/bin/cc 11.3.0
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: 
+                    AM_CPPFLAGS: 
+                         CFLAGS:  -std=c99  -mtune=generic -march=corei7 -Wno-uninitialized -Wno-unused-parameter -Wall -Wcast-align -Wdisabled-optimization -Wextra -Wformat=2 -Winvalid-pch -Wno-format-nonliteral -Wpointer-arith -Wshadow -Wunused -Wwrite-strings -funit-at-a-time -Wno-strict-overflow  -w -fstdarg-opt -pedantic -Wall -Wextra -fmessage-length=0
+                      H5_CFLAGS: 
+                      AM_CFLAGS: 
+               Shared C Library: YES
+               Static C Library: NO
+
+                        Fortran: 
+               Fortran Compiler:  
+                  Fortran Flags: 
+               H5 Fortran Flags: 
+               AM Fortran Flags: 
+         Shared Fortran Library: YES
+         Static Fortran Library: NO
+
+                            C++: ON
+                   C++ Compiler: /usr/bin/c++ 11.3.0
+                      C++ Flags:   -mtune=generic -march=corei7 -Wall -Wcast-align -Wdisabled-optimization -Wextra -Wformat=2 -Winvalid-pch -Wno-format-nonliteral -Wpointer-arith -Wshadow -Wunused -Wwrite-strings -funit-at-a-time -Wno-strict-overflow -Wno-deprecated -Wno-invalid-offsetof -Woverloaded-virtual -Wstrict-null-sentinel  -w -fstdarg-opt -fmessage-length=0
+                   H5 C++ Flags: 
+                   AM C++ Flags: 
+             Shared C++ Library: YES
+             Static C++ Library: NO
+
+                            JAVA: 
+                 JAVA Compiler:  
+
+Features:
+---------
+                   Parallel HDF5: OFF
+Parallel Filtered Dataset Writes: 
+              Large Parallel I/O: 
+              High-level library: OFF
+                Build HDF5 Tests: OFF
+                Build HDF5 Tools: 
+                    Threadsafety: OFF
+             Default API mapping: v110
+  With deprecated public symbols: ON
+          I/O filters (external):  DEFLATE
+                             MPE: 
+                      Direct VFD: 1
+              (Read-Only) S3 VFD: 
+            (Read-Only) HDFS VFD: 
+                         dmalloc: 
+  Packages w/ extra debug output: 
+                     API Tracing: OFF
+            Using memory checker: OFF
+ Memory allocation sanity checks: OFF
+          Function Stack Tracing: OFF
+       Strict File Format Checks: OFF
+    Optimization Instrumentation: OFF

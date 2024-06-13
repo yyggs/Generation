@@ -1,0 +1,13 @@
+set(ITKDeprecated_LOADED 1)
+set(ITKDeprecated_ENABLE_SHARED "1")
+set(ITKDeprecated_DEPENDS "ITKCommon;ITKImageFunction;ITKTransform")
+set(ITKDeprecated_PUBLIC_DEPENDS "ITKCommon;ITKImageFunction;ITKTransform")
+set(ITKDeprecated_TRANSITIVE_DEPENDS "ITKCommon;ITKImageFunction;ITKTransform")
+set(ITKDeprecated_PRIVATE_DEPENDS "")
+set(ITKDeprecated_LIBRARIES "ITKDeprecated")
+set(ITKDeprecated_INCLUDE_DIRS "${ITK_INSTALL_PREFIX}/include/ITK-5.2")
+set(ITKDeprecated_LIBRARY_DIRS "")
+set(ITKDeprecated_RUNTIME_LIBRARY_DIRS "${ITK_INSTALL_PREFIX}/lib")
+set(ITKDeprecated_TARGETS_FILE "")
+set(ITKDeprecated_FACTORY_NAMES "")
+
