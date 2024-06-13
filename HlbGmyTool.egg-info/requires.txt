@@ -1,0 +1,12 @@
+pyyaml
+vtk~=9.0
+vmtk~=1.5
+
+[:python_version < "3.7"]
+numpy<1.20
+
+[:python_version >= "3.7"]
+numpy
+
+[gui]
+wxPython

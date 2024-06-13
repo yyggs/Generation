@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: HlbGmyTool
+Version: 1.2
+Author: Rupert Nash
+Author-email: r.nash@epcc.ed.ac.uk
+Requires-Python: >=3.6
+Requires-Dist: pyyaml
+Requires-Dist: numpy<1.20; python_version < "3.7"
+Requires-Dist: numpy; python_version >= "3.7"
+Requires-Dist: vtk~=9.0
+Requires-Dist: vmtk~=1.5
+Provides-Extra: gui
+Requires-Dist: wxPython; extra == "gui"
