@@ -111,9 +111,13 @@ target_link_libraries(Generation PRIVATE
   ${VTK_LIBRARIES}
 )
 
-# Check if the build type is Debug
-if(CMAKE_BUILD_TYPE MATCHES Debug)
+if(CMAKE_BUILD_TYPE MATCHES Debug OR CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
   add_definitions(-DDEBUG)
+  include_directories(/opt/intel/oneapi/vtune/2024.0/include)
+  link_directories(/opt/intel/oneapi/vtune/2024.0/lib64)
+  find_library(ITT_LIB ittnotify PATHS /opt/intel/oneapi/vtune/2024.0/lib64 REQUIRED)
+  target_link_libraries(uhlb ${ITT_LIB})
+
 endif()
 
 

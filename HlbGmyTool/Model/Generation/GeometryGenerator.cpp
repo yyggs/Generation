@@ -15,6 +15,7 @@
 
 #include <cassert>
 #include "io/formats/geometry.h"
+#include "ittnotify.h"
 
 using namespace hemelb::io::formats;
 
@@ -27,13 +28,13 @@ GeometryGenerator::~GeometryGenerator() {}
 void GeometryGenerator::PreExecute() {}
 
 void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
+  __itt_resume();
   if (skipNonIntersectingBlocks) {
     throw GenerationErrorMessage(
         "Skip non intersecting blocks functionality currently not available. "
         "See ticket #651");
   }
-	
-  Log() << "Modification test Log! " << endl;
+
   this->PreExecute();
   double bounds[6];
   this->ComputeBounds(bounds);
@@ -109,6 +110,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   }
   Log() << "Generated " << blockCount << " blocks." << endl;
   writer.Close();
+  __itt_pause();
 }
 
 void GeometryGenerator::WriteSolidSite(BlockWriter& blockWriter, Site& site) {
@@ -180,3 +182,4 @@ void GeometryGenerator::ComputeAveragedNormal(Site& site) const {
     }
   }
 }
+
