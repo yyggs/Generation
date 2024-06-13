@@ -54,7 +54,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockCount++;
     
     // print block size
-    Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
+    // Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
 
     int side = 0;  // represents whether the block is inside (-1) outside (+1)
                    // or undetermined (0)
