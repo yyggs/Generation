@@ -11,6 +11,7 @@
 
 #include "GenerationError.h"
 #include "Iolet.h"
+#include "Debug.h"
 
 class GeometryWriter;
 class Site;
@@ -44,6 +45,7 @@ class GeometryGenerator {
     this->SiteCounts[0] = x;
     this->SiteCounts[1] = y;
     this->SiteCounts[2] = z;
+    //Log() << "x y z = " << x << " " << y << " " << z << std::endl; 
   }
 
   /**

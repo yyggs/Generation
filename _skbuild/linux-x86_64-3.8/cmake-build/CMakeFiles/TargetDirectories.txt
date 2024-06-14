@@ -1,8 +1,0 @@
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/uhlb.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/Generation.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/edit_cache.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/rebuild_cache.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/list_install_components.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/install.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/install/local.dir
-/home/lihua/Desktop/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/install/strip.dir
