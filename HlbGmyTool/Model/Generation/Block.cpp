@@ -12,6 +12,7 @@
 #include "vtkCubeSource.h"
 #include "vtkOBBTree.h"
 #include "vtkXMLPolyDataWriter.h"
+#include "Debug.h"
 
 /*
  * Helper functions to check if sites are on the edge of the Domain.
@@ -100,13 +101,13 @@ vtkSmartPointer<vtkOBBTree> Block::CreateOBBTreeModel(double extraSize) const {
 Block::~Block() {
   SiteIterator end = this->sites.end();
   SiteIterator current = this->sites.begin();
-  int blocksize = 0;
+  //int blocksize = 0;
   for (; current != end; ++current) {
     // current will dereference to a Site*
-    blocksize += sizeof(*current);
+    //blocksize += sizeof(*current);
     delete *current;
   }
-  Log() << "Block size: " << blocksize << " bytes (from ~Block)" << endl;
+  //Log() << "Block size: " << blocksize << " bytes (from ~Block)" << endl;
 }
 
 Site& Block::GetGlobalSite(const Index& globalInd) {
