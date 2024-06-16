@@ -103,8 +103,8 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       default:
         break;
-      Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
     }
+    Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
     blockWriterPtr->Finish();
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
