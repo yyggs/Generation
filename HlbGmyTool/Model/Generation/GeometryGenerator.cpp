@@ -109,7 +109,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
   }
-  Log() << "Generated " << blockCount << " blocks." << endl;
   writer.Close();
   __itt_pause();
 }
