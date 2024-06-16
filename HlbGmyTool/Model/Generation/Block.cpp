@@ -100,10 +100,13 @@ vtkSmartPointer<vtkOBBTree> Block::CreateOBBTreeModel(double extraSize) const {
 Block::~Block() {
   SiteIterator end = this->sites.end();
   SiteIterator current = this->sites.begin();
+  int blocksize = 0;
   for (; current != end; ++current) {
     // current will dereference to a Site*
+    blocksize += sizeof(*current);
     delete *current;
   }
+  Log() << "Block size: " << blocksize << " bytes (from ~Block)" << endl;
 }
 
 Site& Block::GetGlobalSite(const Index& globalInd) {
