@@ -119,7 +119,7 @@ BlockIterator& BlockIterator::operator++() {
         // blocks, so delete, and set pointer to null
         pos = this->domain->TranslateIndex(i, j, k);
         // Print the delete order
-        Log() << "Deleting block " << i << " " << j << " " << k << std::endl;
+        //Log() << "Deleting block " << i << " " << j << " " << k << std::endl;
         delete this->domain->blocks[pos];
         this->domain->blocks[pos] = NULL;
       }
@@ -139,8 +139,8 @@ BlockIterator& BlockIterator::operator++() {
     }
   }
   // print traversal order
-  Log() << "Traversing block " << this->current[0] << " " << this->current[1]
-        << " " << this->current[2] << std::endl;
+  //Log() << "Traversing block " << this->current[0] << " " << this->current[1]
+        //<< " " << this->current[2] << std::endl;
   return *this;
 }
 
