@@ -9,6 +9,7 @@
 #include <vector>
 #include "Index.h"
 #include "io/formats/geometry.h"
+#include "Debug.h"
 // shortcut to geometry class
 using hemelb::io::formats::geometry;
 
