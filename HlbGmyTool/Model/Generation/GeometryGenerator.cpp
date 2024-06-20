@@ -43,6 +43,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   GeometryWriter writer(this->OutputGeometryFile, domain.GetBlockSize(),
                         domain.GetBlockCounts());
 
+  int blockCount = 0;
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
     // Open the BlockStarted context of the writer; this will
@@ -50,6 +51,10 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     // case where there are no fluid sites).
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
     Block& block = *blockIt;
+    blockCount++;
+    
+    // print block size
+    // Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
 
     int side = 0;  // represents whether the block is inside (-1) outside (+1)
                    // or undetermined (0)
@@ -69,7 +74,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         // Block has some surface within it.
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          Site& site = **siteIt;
+          Site& site = *siteIt;
           this->ClassifySite(site);
           // here we should check site
           if (site.IsFluid) {
@@ -84,7 +89,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         // Block is entirely inside the domain
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          Site& site = **siteIt;
+          Site& site = *siteIt;
           site.IsFluidKnown = true;
           site.IsFluid = true;
           site.CreateLinksVector();

@@ -12,6 +12,7 @@
 #include "vtkCubeSource.h"
 #include "vtkOBBTree.h"
 #include "vtkXMLPolyDataWriter.h"
+#include "Debug.h"
 
 /*
  * Helper functions to check if sites are on the edge of the Domain.
@@ -51,23 +52,24 @@ Block::Block(Domain& dom, const Index& ind, const unsigned int& size)
       min(ind * size),
       max((ind + Index{1}) * size),
       domain(dom) {
-  this->sites.resize(size * size * size);
+  //this->sites.resize(size * size * size);
+  this->sites.reserve(size * size * size);
   unsigned int ijk = 0;
   const bool blockHasEdge = BlockHasEdges(*this);
 
   for (unsigned int i = ind[0] * size; i < (ind[0] + 1) * size; ++i) {
     for (unsigned int j = ind[1] * size; j < (ind[1] + 1) * size; ++j) {
-      for (unsigned int k = ind[2] * size; k < (ind[2] + 1) * size; ++k) {
-        this->sites[ijk] = new Site(*this, i, j, k);
+      for (unsigned int k = ind[2] * size; k < (ind[2] + 1) * size; ++k) {  
+        this->sites.emplace_back(*this, i, j, k);            
 
         /*
          * If the site is on the edge of the domain, we known that it
          * must be solid. Set this here in order to bootstrap the
          * classification process.
          */
-        if (blockHasEdge && SiteIsEdge(*this->sites[ijk])) {
-          this->sites[ijk]->IsFluidKnown = true;
-          this->sites[ijk]->IsFluid = false;
+        if (blockHasEdge && SiteIsEdge(this->sites[ijk])) {
+          this->sites[ijk].IsFluidKnown = true;
+          this->sites[ijk].IsFluid = false;
         }
 
         ++ijk;
@@ -81,12 +83,13 @@ vtkSmartPointer<vtkOBBTree> Block::CreateOBBTreeModel(double extraSize) const {
   vtkNew<vtkOBBTree> result;
   vtkNew<vtkCubeSource> cubeSource;
 
-  cubeSource->SetBounds(sites.front()->Position[0] - extraSize,
-                        sites.back()->Position[0] + extraSize,
-                        sites.front()->Position[1] - extraSize,
-                        sites.back()->Position[1] + extraSize,
-                        sites.front()->Position[2] - extraSize,
-                        sites.back()->Position[2] + extraSize);
+  cubeSource->SetBounds(sites.front().Position[0] - extraSize,
+                        sites.back().Position[0] + extraSize,
+                        sites.front().Position[1] - extraSize,
+                        sites.back().Position[1] + extraSize,
+                        sites.front().Position[2] - extraSize,
+                        sites.back().Position[2] + extraSize);
+
 
   vtkNew<vtkPolyData> cubePolyData;
   cubeSource->SetOutput(cubePolyData);
@@ -98,12 +101,7 @@ vtkSmartPointer<vtkOBBTree> Block::CreateOBBTreeModel(double extraSize) const {
 }
 
 Block::~Block() {
-  SiteIterator end = this->sites.end();
-  SiteIterator current = this->sites.begin();
-  for (; current != end; ++current) {
-    // current will dereference to a Site*
-    delete *current;
-  }
+  
 }
 
 Site& Block::GetGlobalSite(const Index& globalInd) {
@@ -128,5 +126,5 @@ Site& Block::GetLocalSite(const Index& ind) {
    * Get the site, creating it if it didn't exist.
    */
   unsigned int ijk = this->TranslateIndex(ind);
-  return *this->sites[ijk];
+  return this->sites[ijk];
 }
