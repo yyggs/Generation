@@ -59,8 +59,7 @@ Block::Block(Domain& dom, const Index& ind, const unsigned int& size)
 
   for (unsigned int i = ind[0] * size; i < (ind[0] + 1) * size; ++i) {
     for (unsigned int j = ind[1] * size; j < (ind[1] + 1) * size; ++j) {
-      for (unsigned int k = ind[2] * size; k < (ind[2] + 1) * size; ++k) {
-        //this->sites[ijk] = Site(*this, i, j, k);    
+      for (unsigned int k = ind[2] * size; k < (ind[2] + 1) * size; ++k) {  
         this->sites.emplace_back(*this, i, j, k);            
 
         /*
@@ -102,15 +101,6 @@ vtkSmartPointer<vtkOBBTree> Block::CreateOBBTreeModel(double extraSize) const {
 }
 
 Block::~Block() {
-  // SiteIterator end = this->sites.end();
-  // SiteIterator current = this->sites.begin();
-  // //int blocksize = 0;
-  // for (; current != end; ++current) {
-  //   //current will dereference to a Site*
-  //   //blocksize += sizeof(*current);
-  //   delete *current;
-  // }
-  //Log() << "Block size: " << blocksize << " bytes (from ~Block)" << endl;
 }
 
 Site& Block::GetGlobalSite(const Index& globalInd) {
