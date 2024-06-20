@@ -101,6 +101,7 @@ vtkSmartPointer<vtkOBBTree> Block::CreateOBBTreeModel(double extraSize) const {
 }
 
 Block::~Block() {
+  
 }
 
 Site& Block::GetGlobalSite(const Index& globalInd) {
