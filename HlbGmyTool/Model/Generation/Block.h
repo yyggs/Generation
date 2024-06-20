@@ -12,10 +12,10 @@
 class vtkOBBTree;
 
 #include "Index.h"
-class Site;
+#include "Site.h"
 #include "Domain.h"
 
-using SiteVec = std::vector<Site*>;
+using SiteVec = std::vector<Site>;
 using SiteIterator = SiteVec::iterator;
 
 class Block {
@@ -36,7 +36,7 @@ class Block {
   inline const Index& GetIndex() const { return this->index; }
   vtkSmartPointer<vtkOBBTree> CreateOBBTreeModel(double extraSize) const;
 
-  const Site& Middle() const { return *sites[sites.size() / 2]; }
+  const Site& Middle() const { return sites[sites.size() / 2]; }
 
  protected:
   unsigned int size;

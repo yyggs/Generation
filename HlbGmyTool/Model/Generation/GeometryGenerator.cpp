@@ -74,7 +74,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         // Block has some surface within it.
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          Site& site = **siteIt;
+          Site& site = *siteIt;
           this->ClassifySite(site);
           // here we should check site
           if (site.IsFluid) {
@@ -89,7 +89,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         // Block is entirely inside the domain
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          Site& site = **siteIt;
+          Site& site = *siteIt;
           site.IsFluidKnown = true;
           site.IsFluid = true;
           site.CreateLinksVector();
