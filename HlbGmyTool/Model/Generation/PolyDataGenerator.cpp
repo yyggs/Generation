@@ -627,3 +627,19 @@ bool PolyDataGenerator::distancesort(const Object_Primitive_and_distance i,
                                      const Object_Primitive_and_distance j) {
   return (i.second < j.second);
 }
+
+void PolyDataGenerator::ClassifyStartingSite(Site& originSite, Site& site){
+  int nHits;
+  if(originSite.IsFluidKnown){
+    nHits = this->ComputeIntersectionsCGAL(originSite, site);
+    if (nHits % 2 == 0) {
+      // Even # hits, hence neigh has same type as site
+      site.IsFluid = originSite.IsFluid;
+    } else if (nHits % 2 == 1) {
+      // Odd # hits, neigh is opposite type to site
+      site.IsFluid = !originSite.IsFluid;
+    } else {
+      //site.IsFluid = InsideOutside(site);
+    }
+  }
+}

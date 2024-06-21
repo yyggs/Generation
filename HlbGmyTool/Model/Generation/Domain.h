@@ -25,6 +25,8 @@ class Domain {
   int BlockSize;
 
   std::vector<Block*> blocks;
+  std::vector<bool> startingFluid;
+
 
   friend class BlockIterator;
   friend class NeighbourIteratorBase;
@@ -55,6 +57,7 @@ class Domain {
   inline void SetBlockCounts(Index const& val) { BlockCounts = val; }
 
   inline Index const& GetSiteCounts() const { return SiteCounts; }
+  inline void SetStartingFluid(bool val){ startingFluid.push_back(val); }
 
   /*
    * These TranslateIndex member functions translate between 3d and 1a

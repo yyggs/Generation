@@ -17,6 +17,9 @@ Domain::Domain(double OriginWorking[3],
   for (unsigned int i = 0; i < 3; ++i) {
     // Copy in
     this->OriginWorking[i] = OriginWorking[i];
+    // print originworking
+    // Log() << "OriginWorking[" << i << "] = " << OriginWorking[i] << std::endl;
+
     this->SiteCounts[i] = SiteCounts[i];
 
     // Now work out how many blocks we require.
@@ -33,6 +36,9 @@ Domain::Domain(double OriginWorking[3],
   // Resize the block vector
   this->blocks.resize(totalBlocks);
   Log() << "Domain size " << this->BlockCounts << std::endl;
+
+  // Resize the starting sites status
+  this->startingFluid.resize(totalBlocks);
 }
 
 Vector Domain::CalcPositionWorkingFromIndex(const Index& index) const {
