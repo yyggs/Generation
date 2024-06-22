@@ -38,7 +38,7 @@ Domain::Domain(double OriginWorking[3],
   Log() << "Domain size " << this->BlockCounts << std::endl;
 
   // Resize the starting sites status
-  this->startingFluid.resize(totalBlocks);
+  //this->startingFluid.resize(totalBlocks);
 }
 
 Vector Domain::CalcPositionWorkingFromIndex(const Index& index) const {
@@ -52,7 +52,7 @@ Block& Domain::GetBlock(const Index& index) {
   Block* bp = this->blocks[i];
   // If the block hasn't been created yet, do so.
   if (!bp) {
-    bp = this->blocks[i] = new Block(*this, index, this->BlockSize);
+    bp = this->blocks[i] = new HaloBlock(*this, index, this->BlockSize);
   }
   return *bp;
 }

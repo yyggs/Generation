@@ -10,6 +10,7 @@
 
 #include "BlockWriter.h"
 #include "Index.h"
+#include "Debug.h"
 
 class Block;
 class Site;
@@ -25,7 +26,7 @@ class Domain {
   int BlockSize;
 
   std::vector<Block*> blocks;
-  std::vector<bool> startingFluid;
+  //std::vector<bool> startingFluid;
 
 
   friend class BlockIterator;
@@ -33,7 +34,7 @@ class Domain {
 
  public:
   using iterator = BlockIterator;
-
+  std::vector<bool> startingFluid;
   /*
    * C'tor
    * SurfaceBounds - bounds of the surface, in standard VTK order
@@ -58,7 +59,17 @@ class Domain {
 
   inline Index const& GetSiteCounts() const { return SiteCounts; }
   inline void SetStartingFluid(bool val){ startingFluid.push_back(val); }
-
+  // inline bool GetStartingFluid(Index ind){ 
+  //   //Log() << "Index: " << ind << "is: " << (startingFluid[ind[0] * BlockSize * BlockSize + ind[1] * BlockSize + ind[2]] ? "fluid" : "solid") << std::endl;
+  //   return startingFluid[ind[0] * BlockSize * BlockSize + ind[1] * BlockSize + ind[2]]; 
+  //   }
+  inline bool GetStartingFluid(int index){ 
+    if(index >= startingFluid.size()){
+      Log() << "Index: " << index << " is out of bounds" << std::endl;
+      return false;
+    }
+    return startingFluid[index]; 
+    }
   /*
    * These TranslateIndex member functions translate between 3d and 1a
    * indices, i.e.

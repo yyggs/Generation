@@ -46,6 +46,9 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
 
   int blockCount = 0;
   HaloBlock::CreateHaloMap();
+
+
+  int flag = 0;
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
     // Open the BlockStarted context of the writer; this will
@@ -54,10 +57,16 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
     Block& block = *blockIt;
     blockCount++;
-    
     // print block size
     // Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
 
+    Site& startSite = *block.begin();
+    startSite.IsFluidKnown = true;
+    Index blockIndex = block.GetIndex();
+    startSite.IsFluid = domain.GetStartingFluid(blockCount-1);
+    if(startSite.IsFluid){
+      startSite.CreateLinksVector();
+    }
     int side = 0;  // represents whether the block is inside (-1) outside (+1)
                    // or undetermined (0)
 
@@ -74,14 +83,27 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case 0:
         // Block has some surface within it.
+        if(flag == 1){
+          Log() << " *0* ";
+        }
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
+          if(flag == 1){
+            Log() << " *1* ";
+          }
           Site& site = *siteIt;
           this->ClassifySite(site);
           // here we should check site
+          if(flag == 1){
+            Log() << " *2* ";
+          }
           if (site.IsFluid) {
+            //Log() << "Site " << site.GetIndex() << " is fluid" << std::endl;
             blockWriterPtr->IncrementFluidSitesCount();
             WriteFluidSite(*blockWriterPtr, site);
+            if(flag == 1){
+              Log() << " *3* ";
+            }
           } else {
             WriteSolidSite(*blockWriterPtr, site);
           }
@@ -196,7 +218,10 @@ void GeometryGenerator::ComputeStartingSites(Domain& domain) {
   Index blockCounts = domain.GetBlockCounts();
   for (unsigned int i = 0; i < blockCounts[0]; ++i) {
     for (unsigned int j = 0; j < blockCounts[1]; ++j) {
-      for (unsigned int k = 1; k < blockCounts[2]; ++k) {
+      for (unsigned int k = 0; k < blockCounts[2]; ++k) {
+        if(i == 0 && j == 0 && k == 0) {
+          continue;
+        }
         Site site = Site(block, i * blocksize, j * blocksize, k * blocksize);
         this->ClassifyStartingSite(originSite, site);
         domain.SetStartingFluid(site.IsFluid);

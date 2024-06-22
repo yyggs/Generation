@@ -77,11 +77,17 @@ class HaloBlock : public Block {
         return this->Block::GetLocalSite(globalInd - this->min);
 
       // Check if the coords belong to halo
-      unsigned int ijk = haloIndexIntMap[globalInd - min];
-      return this->haloSites[ijk];
+      auto it = haloIndexIntMap.find(globalInd - min);
+      if (it != haloIndexIntMap.end()) {
+          return this->haloSites[it->second];
+      } else {
+          Log() << "Error: HaloBlock::GetLocalSite: site not found in halo" << std::endl;
+          std::exit(1);
+      }
     }
 
     // Create the map between the index of the sites and the 3D index of the halos
+    // const ??
     static void CreateHaloMap(){
       int ijk = 0;
       for(int i = 0; i < 10; i++){
