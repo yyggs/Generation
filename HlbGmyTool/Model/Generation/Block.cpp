@@ -14,6 +14,8 @@
 #include "vtkXMLPolyDataWriter.h"
 #include "Debug.h"
 
+std::unordered_map<Index, unsigned int> HaloBlock::haloIndexIntMap;
+std::unordered_map<unsigned int, Index> HaloBlock::haloIntIndexMap;
 /*
  * Helper functions to check if sites are on the edge of the Domain.
  */

@@ -45,11 +45,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
                         domain.GetBlockCounts());
 
   int blockCount = 0;
-  std::ofstream file("Actualsite.txt");  // 创建并打开一个文件
-  if (!file.is_open()) {
-      std::cerr << "Failed to open file.\n";
-      return;
-  }
+  HaloBlock::CreateHaloMap();
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
     // Open the BlockStarted context of the writer; this will
@@ -78,11 +74,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case 0:
         // Block has some surface within it.
-        {
-          SiteIterator siteItforTest = block.begin();
-          Site& siteforTest = *siteItforTest;
-          file << "Site " << siteforTest.GetIndex() << " is " << (siteforTest.IsFluid ? "fluid" : "solid") << std::endl;
-        }
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
           Site& site = *siteIt;
@@ -119,7 +110,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
   }
-  file.close(); 
   writer.Close();
   __itt_pause();
 }
@@ -204,20 +194,13 @@ void GeometryGenerator::ComputeStartingSites(Domain& domain) {
 
   int blocksize = domain.GetBlockSize();
   Index blockCounts = domain.GetBlockCounts();
-  std::ofstream file("StartingSite.txt"); 
-    if (!file.is_open()) {
-        std::cerr << "Failed to open file.\n";
-        return;
-    }
   for (unsigned int i = 0; i < blockCounts[0]; ++i) {
     for (unsigned int j = 0; j < blockCounts[1]; ++j) {
       for (unsigned int k = 1; k < blockCounts[2]; ++k) {
         Site site = Site(block, i * blocksize, j * blocksize, k * blocksize);
         this->ClassifyStartingSite(originSite, site);
         domain.SetStartingFluid(site.IsFluid);
-        file << "Site " << site.GetIndex() << " is " << (site.IsFluid ? "fluid" : "solid") << std::endl;
       }
     }
   }
-  file.close();
 }
