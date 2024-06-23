@@ -46,9 +46,12 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
 
   int blockCount = 0;
   HaloBlock::CreateHaloMap();
+  std::ofstream file("HaloSites.txt"); 
+  if (!file.is_open()) {
+      std::cerr << "Failed to open file.\n";
+      return;
+  }
 
-
-  int flag = 0;
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
     // Open the BlockStarted context of the writer; this will
@@ -83,27 +86,15 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case 0:
         // Block has some surface within it.
-        if(flag == 1){
-          Log() << " *0* ";
-        }
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          if(flag == 1){
-            Log() << " *1* ";
-          }
           Site& site = *siteIt;
           this->ClassifySite(site);
           // here we should check site
-          if(flag == 1){
-            Log() << " *2* ";
-          }
           if (site.IsFluid) {
-            //Log() << "Site " << site.GetIndex() << " is fluid" << std::endl;
+            file << "Site " << site.GetIndex() << " is fluid" << std::endl;
             blockWriterPtr->IncrementFluidSitesCount();
             WriteFluidSite(*blockWriterPtr, site);
-            if(flag == 1){
-              Log() << " *3* ";
-            }
           } else {
             WriteSolidSite(*blockWriterPtr, site);
           }
@@ -132,6 +123,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
   }
+  file.close();
   writer.Close();
   __itt_pause();
 }
