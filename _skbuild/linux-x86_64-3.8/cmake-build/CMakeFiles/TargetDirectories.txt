@@ -1,8 +1,0 @@
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/uhlb.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/Generation.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/edit_cache.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/rebuild_cache.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/list_install_components.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/install.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/install/local.dir
-/mnt/lustre/e1000/home/m23oc/m23oc/s2484724/hemelb/geometry-tool/_skbuild/linux-x86_64-3.8/cmake-build/CMakeFiles/install/strip.dir
