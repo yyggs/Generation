@@ -56,6 +56,7 @@ class Site {
   NeighbourIterator endall();
   inline const Index& GetIndex() const { return this->index; }
   inline const Block& GetBlock() const { return this->block; }
+  inline Block& GetBlock() { return this->block; }
   //inline const Index GetRelativeIndex() const { return index((this->index[0] % block.size)+1, (this->index[1] % block.size)+1, (this->index[2] % block.size)+1); }
   const Index GetDomainBlockCount();
   const int GetDomainBlockSize();

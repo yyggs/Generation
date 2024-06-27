@@ -75,7 +75,7 @@ class GeometryGenerator {
   std::string OutputGeometryFile;
   std::vector<Iolet> Iolets;
   virtual int BlockInsideOrOutsideSurface(const Block& block) = 0;
-  void ComputeStartingSites(Domain& domain);
+  void ComputeStartingSite(Site& startSite);
 };
 
 #endif  // HEMELBSETUPTOOL_GEOMETRYGENERATOR_H

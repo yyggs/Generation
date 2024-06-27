@@ -39,8 +39,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   double bounds[6];
   this->ComputeBounds(bounds);
   Domain domain(this->OriginWorking, this->SiteCounts);
-  this->ComputeStartingSites(domain);
-
   GeometryWriter writer(this->OutputGeometryFile, domain.GetBlockSize(),
                         domain.GetBlockCounts());
 
@@ -60,16 +58,10 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
     Block& block = *blockIt;
     blockCount++;
-    // print block size
-    // Log() << "Block size: " << sizeof(block)  << " bytes" << endl;
 
     Site& startSite = *block.begin();
-    startSite.IsFluidKnown = true;
-    Index blockIndex = block.GetIndex();
-    startSite.IsFluid = domain.GetStartingFluid(blockCount-1);
-    if(startSite.IsFluid){
-      startSite.CreateLinksVector();
-    }
+    this->ComputeStartingSite(startSite);
+
     int side = 0;  // represents whether the block is inside (-1) outside (+1)
                    // or undetermined (0)
 
@@ -198,26 +190,14 @@ void GeometryGenerator::ComputeAveragedNormal(Site& site) const {
   }
 }
 
-void GeometryGenerator::ComputeStartingSites(Domain& domain) {
-  // Get the first block to initialise the starting sites
-  Block block = domain.GetBlock(Index(0, 0, 0));
-  domain.SetStartingFluid(false);
+void GeometryGenerator::ComputeStartingSite(Site& startSite) {
+  Block& block = startSite.GetBlock();
   Site originSite = Site(block, 0, 0, 0);
   originSite.IsFluidKnown = true;
   originSite.IsFluid = false;
-
-  int blocksize = domain.GetBlockSize();
-  Index blockCounts = domain.GetBlockCounts();
-  for (unsigned int i = 0; i < blockCounts[0]; ++i) {
-    for (unsigned int j = 0; j < blockCounts[1]; ++j) {
-      for (unsigned int k = 0; k < blockCounts[2]; ++k) {
-        if(i == 0 && j == 0 && k == 0) {
-          continue;
-        }
-        Site site = Site(block, i * blocksize, j * blocksize, k * blocksize);
-        this->ClassifyStartingSite(originSite, site);
-        domain.SetStartingFluid(site.IsFluid);
-      }
-    }
+  this->ClassifyStartingSite(originSite, startSite);
+  startSite.IsFluidKnown = true;
+  if(startSite.IsFluid){
+    startSite.CreateLinksVector();
   }
 }

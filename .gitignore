@@ -1,3 +1,4 @@
 # Ignore _skbuild directory
 _skbuild/
-
+build/
+.vscode/
