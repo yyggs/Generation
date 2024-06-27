@@ -126,9 +126,15 @@ bool NeighbourIteratorBase::operator!=(
 }
 
 // Dereference
+// NeighbourIteratorBase::reference NeighbourIteratorBase::operator*() {
+//   return this->domain->GetSite(this->site->index + GetVector());
+// }
+
+// Get site in the haloblock
 NeighbourIteratorBase::reference NeighbourIteratorBase::operator*() {
-  return this->domain->GetSite(this->site->index + GetVector());
+  return this->site->block.GetLocalSite(this->site->index + GetVector());
 }
+
 // Member lookup
 NeighbourIteratorBase::pointer NeighbourIteratorBase::operator->() {
   return &(*(*this));

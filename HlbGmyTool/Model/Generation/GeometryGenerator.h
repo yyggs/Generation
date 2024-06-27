@@ -11,11 +11,13 @@
 
 #include "GenerationError.h"
 #include "Iolet.h"
+#include "Debug.h"
 
 class GeometryWriter;
 class Site;
 class BlockWriter;
 class Block;
+class Domain;
 
 class GeometryGenerator {
  public:
@@ -44,6 +46,7 @@ class GeometryGenerator {
     this->SiteCounts[0] = x;
     this->SiteCounts[1] = y;
     this->SiteCounts[2] = z;
+    //Log() << "x y z = " << x << " " << y << " " << z << std::endl; 
   }
 
   /**
@@ -62,6 +65,7 @@ class GeometryGenerator {
   virtual void ComputeBounds(double[]) const = 0;
   virtual void PreExecute(void);
   virtual void ClassifySite(Site& site) = 0;
+  virtual void ClassifyStartingSite(Site& originSite, Site& site) = 0;
   // virtual void CreateCGALPolygon(void);
   void WriteSolidSite(BlockWriter& blockWriter, Site& site);
   void WriteFluidSite(BlockWriter& blockWriter, Site& site);
@@ -71,6 +75,7 @@ class GeometryGenerator {
   std::string OutputGeometryFile;
   std::vector<Iolet> Iolets;
   virtual int BlockInsideOrOutsideSurface(const Block& block) = 0;
+  void ComputeStartingSite(Site& startSite);
 };
 
 #endif  // HEMELBSETUPTOOL_GEOMETRYGENERATOR_H

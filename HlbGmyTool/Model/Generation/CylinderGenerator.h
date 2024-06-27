@@ -36,6 +36,7 @@ class CylinderGenerator : public GeometryGenerator {
  private:
   virtual void ComputeBounds(double[]) const;
   void ClassifySite(Site& site);
+  void ClassifyStartingSite(Site& originSite, Site& site){ }
   void ComputeCylinderNormalAtAPoint(Vector& wallNormal,
                                      const Vector& surfacePoint,
                                      const Vector& cylinderAxis) const;

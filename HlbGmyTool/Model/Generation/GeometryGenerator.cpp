@@ -39,9 +39,16 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   double bounds[6];
   this->ComputeBounds(bounds);
   Domain domain(this->OriginWorking, this->SiteCounts);
-
   GeometryWriter writer(this->OutputGeometryFile, domain.GetBlockSize(),
                         domain.GetBlockCounts());
+
+  int blockCount = 0;
+  HaloBlock::CreateHaloMap();
+  std::ofstream file("HaloSites.txt"); 
+  if (!file.is_open()) {
+      std::cerr << "Failed to open file.\n";
+      return;
+  }
 
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
@@ -50,6 +57,10 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     // case where there are no fluid sites).
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
     Block& block = *blockIt;
+    blockCount++;
+
+    Site& startSite = *block.begin();
+    this->ComputeStartingSite(startSite);
 
     int side = 0;  // represents whether the block is inside (-1) outside (+1)
                    // or undetermined (0)
@@ -69,10 +80,11 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         // Block has some surface within it.
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          Site& site = **siteIt;
+          Site& site = *siteIt;
           this->ClassifySite(site);
           // here we should check site
           if (site.IsFluid) {
+            file << "Site " << site.GetIndex() << " is fluid" << std::endl;
             blockWriterPtr->IncrementFluidSitesCount();
             WriteFluidSite(*blockWriterPtr, site);
           } else {
@@ -84,7 +96,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         // Block is entirely inside the domain
         for (SiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
-          Site& site = **siteIt;
+          Site& site = *siteIt;
           site.IsFluidKnown = true;
           site.IsFluid = true;
           site.CreateLinksVector();
@@ -103,6 +115,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
   }
+  file.close();
   writer.Close();
   __itt_pause();
 }
@@ -174,5 +187,17 @@ void GeometryGenerator::ComputeAveragedNormal(Site& site) const {
     if (site.WallNormalAvailable) {
       site.WallNormal.Normalise();
     }
+  }
+}
+
+void GeometryGenerator::ComputeStartingSite(Site& startSite) {
+  Block& block = startSite.GetBlock();
+  Site originSite = Site(block, 0, 0, 0);
+  originSite.IsFluidKnown = true;
+  originSite.IsFluid = false;
+  this->ClassifyStartingSite(originSite, startSite);
+  startSite.IsFluidKnown = true;
+  if(startSite.IsFluid){
+    startSite.CreateLinksVector();
   }
 }

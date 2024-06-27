@@ -58,6 +58,7 @@ class PolyDataGenerator : public GeometryGenerator {
   void CreateCGALPolygon(void);
   void ClosePolygon(void);
   void ClassifySite(Site& site);
+  void ClassifyStartingSite(Site& originSite, Site& site);
   int ComputeIntersections(Site& from, Site& to);
   int ComputeIntersectionsCGAL(Site& from, Site& to);
   bool InsideOutside(Site& site);

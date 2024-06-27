@@ -42,7 +42,7 @@ using namespace hemelb::io::formats;
 
 PolyDataGenerator::PolyDataGenerator()
     : GeometryGenerator(), ClippedSurface(NULL) {
-  this->Locator = vtkOBBTree::New();
+  this->Locator = vtkOBBTree::New(); 
   // this->Locator->SetNumberOfCellsPerNode(32); // the default
   this->Locator->SetTolerance(1e-9);
   this->hitPoints = vtkPoints::New();
@@ -403,6 +403,15 @@ void PolyDataGenerator::ClassifySite(Site& site) {
         link.DistanceInVoxels = distanceInVoxels;
       }
     }
+    // Log() << "Block" << site.GetBlock().GetIndex() << " Site" << site.GetIndex()
+    //       << " is " << (site.IsFluid ? "fluid" : "solid") << " and block"
+    //       << neigh.GetBlock().GetIndex() << " site" << neigh.GetIndex() << " is "
+    //       << (neigh.IsFluid ? "fluid" : "solid") << std::endl;
+
+    // if(site.Position[0] == 0 && site.Position[1] == 0 && site.Position[2] == 128.5){
+    //   Log() << "Site at " << site.Position[0] << " " << site.Position[1] << " " << site.Position[2] << " is " << (site.IsFluid ? "fluid" : "solid") << std::endl;
+    // }
+
   }
 
   // If there's enough information available, an approximation of the wall
@@ -434,6 +443,7 @@ int PolyDataGenerator::Intersect(Site& site, Site& neigh) {
       nHits = this->ComputeIntersectionsCGAL(site, neigh);
       // Only in the case of difference must we intersect.
       if (nHits % 2 == 0) {
+        Log() << "nHits = " << nHits << std::endl;
         bool Sinside = InsideOutside(site);
         bool Ninside = InsideOutside(neigh);
         throw InconsistentIntersectRayError(site, neigh, nHits, Sinside,
@@ -626,4 +636,20 @@ int PolyDataGenerator::BlockInsideOrOutsideSurface(const Block& block) {
 bool PolyDataGenerator::distancesort(const Object_Primitive_and_distance i,
                                      const Object_Primitive_and_distance j) {
   return (i.second < j.second);
+}
+
+void PolyDataGenerator::ClassifyStartingSite(Site& originSite, Site& site){
+  int nHits;
+  if(originSite.IsFluidKnown){
+    nHits = this->ComputeIntersectionsCGAL(originSite, site);
+    if (nHits % 2 == 0) {
+      // Even # hits, hence neigh has same type as site
+      site.IsFluid = originSite.IsFluid;
+    } else if (nHits % 2 == 1) {
+      // Odd # hits, neigh is opposite type to site
+      site.IsFluid = !originSite.IsFluid;
+    } else {
+      //site.IsFluid = InsideOutside(site);
+    }
+  }
 }

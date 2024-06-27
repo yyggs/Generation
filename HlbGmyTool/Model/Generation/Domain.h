@@ -10,6 +10,7 @@
 
 #include "BlockWriter.h"
 #include "Index.h"
+#include "Debug.h"
 
 class Block;
 class Site;
@@ -31,7 +32,6 @@ class Domain {
 
  public:
   using iterator = BlockIterator;
-
   /*
    * C'tor
    * SurfaceBounds - bounds of the surface, in standard VTK order

@@ -12,7 +12,6 @@
 #include "GenerationError.h"
 #include "GeometryWriter.h"
 #include "Neighbours.h"
-#include "Debug.h"
 
 BlockWriter::BlockWriter(BufferPool* bp)
     : writer(NULL), buffer(NULL), bufferPool(bp) {
@@ -84,9 +83,6 @@ void BlockWriter::Finish() {
     // How much space did we actually use?
     this->CompressedBlockLength =
         reinterpret_cast<char*>(stream.next_out) - compressedBuffer;
-    
-    // Print Compressed Block size
-    //Log() << "Compressed block size: " << this->CompressedBlockLength << " bytes" << std::endl;
 
     // Tell zlib to clean up.
     ret = deflateEnd(&stream);

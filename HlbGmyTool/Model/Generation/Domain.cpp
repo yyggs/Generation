@@ -17,6 +17,9 @@ Domain::Domain(double OriginWorking[3],
   for (unsigned int i = 0; i < 3; ++i) {
     // Copy in
     this->OriginWorking[i] = OriginWorking[i];
+    // print originworking
+    // Log() << "OriginWorking[" << i << "] = " << OriginWorking[i] << std::endl;
+
     this->SiteCounts[i] = SiteCounts[i];
 
     // Now work out how many blocks we require.
@@ -33,6 +36,9 @@ Domain::Domain(double OriginWorking[3],
   // Resize the block vector
   this->blocks.resize(totalBlocks);
   Log() << "Domain size " << this->BlockCounts << std::endl;
+
+  // Resize the starting sites status
+  //this->startingFluid.resize(totalBlocks);
 }
 
 Vector Domain::CalcPositionWorkingFromIndex(const Index& index) const {
@@ -46,7 +52,7 @@ Block& Domain::GetBlock(const Index& index) {
   Block* bp = this->blocks[i];
   // If the block hasn't been created yet, do so.
   if (!bp) {
-    bp = this->blocks[i] = new Block(*this, index, this->BlockSize);
+    bp = this->blocks[i] = new HaloBlock(*this, index, this->BlockSize);
   }
   return *bp;
 }
@@ -118,6 +124,8 @@ BlockIterator& BlockIterator::operator++() {
         // This block can no longer be reached from the current or later
         // blocks, so delete, and set pointer to null
         pos = this->domain->TranslateIndex(i, j, k);
+        // Print the delete order
+        //Log() << "Deleting block " << i << " " << j << " " << k << std::endl;
         delete this->domain->blocks[pos];
         this->domain->blocks[pos] = NULL;
       }
@@ -136,6 +144,9 @@ BlockIterator& BlockIterator::operator++() {
       this->current[0] += 1;
     }
   }
+  // print traversal order
+  //Log() << "Traversing block " << this->current[0] << " " << this->current[1]
+        //<< " " << this->current[2] << std::endl;
   return *this;
 }
 
