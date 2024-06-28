@@ -14,9 +14,8 @@
 using hemelb::io::formats::geometry;
 
 // class Iolet;
-class Block;
 class Domain;
-class UnifiedBlock;
+class Block;
 
 class LaterNeighbourIterator;
 class NeighbourIterator;
@@ -38,8 +37,7 @@ struct LinkData {
 class Site {
  public:
   Site(Block& block, Index& index);
-  Site(Block& block, unsigned int i, unsigned int j, unsigned int k);
-  Site(UnifiedBlock& block, unsigned int i, unsigned int j, unsigned int k);
+  Site(Block& block, int i, int j, int k);
   bool IsFluidKnown;
   bool IsFluid;
   bool IsHalo;

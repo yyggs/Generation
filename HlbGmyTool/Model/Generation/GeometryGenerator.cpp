@@ -43,7 +43,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
                         domain.GetBlockCounts());
 
   int blockCount = 0;
-  HaloBlock::CreateHaloMap();
   std::ofstream file("HaloSites.txt"); 
   if (!file.is_open()) {
       std::cerr << "Failed to open file.\n";
@@ -60,6 +59,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockCount++;
 
     Site& startSite = *block.begin();
+
     this->ComputeStartingSite(startSite);
 
     int side = 0;  // represents whether the block is inside (-1) outside (+1)
@@ -78,7 +78,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case 0:
         // Block has some surface within it.
-        for (SiteIterator siteIt = block.begin(); siteIt != block.end();
+        for (Block::InnerSiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
           Site& site = *siteIt;
           this->ClassifySite(site);
@@ -94,7 +94,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case -1:
         // Block is entirely inside the domain
-        for (SiteIterator siteIt = block.begin(); siteIt != block.end();
+        for (Block::InnerSiteIterator siteIt = block.begin(); siteIt != block.end();
              ++siteIt) {
           Site& site = *siteIt;
           site.IsFluidKnown = true;

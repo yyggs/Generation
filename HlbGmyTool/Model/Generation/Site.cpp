@@ -22,7 +22,7 @@ Site::Site(Block& block, Index& index)
       WallNormalAvailable(false) {}
 
 // C'tor with index constructed in-place
-Site::Site(Block& block, unsigned int i, unsigned int j, unsigned int k)
+Site::Site(Block& block, int i, int j, int k)
     : IsFluidKnown(false),
       IsFluid(false),
       IsHalo(false),
@@ -134,7 +134,7 @@ bool NeighbourIteratorBase::operator!=(
 
 // Get site in the haloblock
 NeighbourIteratorBase::reference NeighbourIteratorBase::operator*() {
-  return this->site->block.GetLocalSite(this->site->index + GetVector());
+  return this->site->block.GetSite(this->site->index + GetVector());
 }
 
 // Member lookup
