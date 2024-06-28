@@ -15,6 +15,7 @@
 Site::Site(Block& block, Index& index)
     : IsFluidKnown(false),
       IsFluid(false),
+      IsHalo(false),
       Position(block.GetDomain().CalcPositionWorkingFromIndex(index)),
       block(block),
       index(index),
@@ -24,6 +25,7 @@ Site::Site(Block& block, Index& index)
 Site::Site(Block& block, unsigned int i, unsigned int j, unsigned int k)
     : IsFluidKnown(false),
       IsFluid(false),
+      IsHalo(false),
       block(block),
       index(i, j, k),
       WallNormalAvailable(false) {

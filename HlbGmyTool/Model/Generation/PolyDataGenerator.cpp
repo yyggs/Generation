@@ -609,7 +609,7 @@ int IntersectingLeafCounter(vtkOBBNode* polyNode,
 int PolyDataGenerator::BlockInsideOrOutsideSurface(const Block& block) {
   // Create an OBB tree for the block
   vtkSmartPointer<vtkOBBTree> blockSlightlyLargerOBBTree =
-      block.CreateOBBTreeModel(1.0);
+      block.CreateOBBTreeModel(0.0);      // Block has been expaned by 1.0
 
   // Count the number of domain OBB leaf nodes that intersect the single
   // node created for the block.

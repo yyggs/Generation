@@ -21,8 +21,6 @@ using SiteIterator = SiteVec::iterator;
 
 class Block {
  public:
-  // typedef std::vector<Site*>::iterator iterator;
-
   Block(Domain&, const Index&, const unsigned int&);
   ~Block();
 
@@ -109,6 +107,94 @@ class HaloBlock : public Block {
     SiteVec haloSites;
     static std::unordered_map<Index, unsigned int> haloIndexIntMap;
     static std::unordered_map<unsigned int, Index> haloIntIndexMap;
+};
+
+class UnifiedBlock{
+  public:
+    UnifiedBlock(Domain& domain, const Index& ind, const unsigned int& size);
+    ~UnifiedBlock();  
+
+    Site& GetSite(const Index& globalInd){
+      Index localInd = globalInd - min - Index{1};
+      return this->sites[localInd[0] * (size + 2) * (size + 2) + localInd[1] * (size + 2) + localInd[2]];
+    }
+
+    class InnerSiteIterator {
+      UnifiedBlock& block;
+      unsigned int index;
+
+    public:
+      using iterator_category = std::forward_iterator_tag;
+      using value_type = Site;
+      using difference_type = std::ptrdiff_t;
+      using pointer = Site*;
+      using reference = Site&;
+
+      InnerSiteIterator(UnifiedBlock& block, unsigned int start = 0)
+        : block(block), index(start) {
+        if(index < block.sites.size() && !isInnerIndex()){
+          ++(*this);
+        }
+      }
+
+      bool isInnerIndex() const {
+        int z = index % (block.size + 2);
+        int y = (index / (block.size + 2)) % (block.size + 2);
+        int x = index / ((block.size + 2) * (block.size + 2));
+        return x > 0 && x < block.size + 1 && y > 0 && y < block.size + 1 && z > 0 && z < block.size + 1;
+      }
+
+      InnerSiteIterator& operator++() {
+        do {
+          ++index;
+        } while(index < block.sites.size() && !isInnerIndex());
+        return *this;
+      }
+
+      reference operator*() const {
+          return block.sites[index];
+      }
+
+      pointer operator->() const {
+          return &block.sites[index];
+      }
+
+      bool operator==(const InnerSiteIterator& other) const {
+          return index == other.index;
+      }
+
+      bool operator!=(const InnerSiteIterator& other) const {
+          return index != other.index;
+      }
+    };
+
+    InnerSiteIterator begin() {
+      return InnerSiteIterator(*this);
+    }
+
+    InnerSiteIterator end() {
+      return InnerSiteIterator(*this, sites.size());
+    }
+
+    inline Domain& GetDomain() const { return this->domain; }
+    inline const Index& GetIndex() const { return this->index; }
+    vtkSmartPointer<vtkOBBTree> CreateOBBTreeModel(double extraSize) const;
+
+    const Site& Middle() const { return sites[sites.size() / 2]; }
+
+  protected:
+    Domain& domain;
+    const Index index;
+    const unsigned int size;
+    const Index min;
+    const Index max;
+    SiteVec sites;
+
+    inline unsigned int TranslateIndex(const Index& ind) {
+      return (ind[0] * this->size + ind[1]) * this->size + ind[2];
+    }
+    friend class NeighbourIteratorBase;
+    friend class LaterNeighbourIterator;
 };
 
 

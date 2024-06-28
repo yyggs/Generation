@@ -16,6 +16,7 @@ using hemelb::io::formats::geometry;
 // class Iolet;
 class Block;
 class Domain;
+class UnifiedBlock;
 
 class LaterNeighbourIterator;
 class NeighbourIterator;
@@ -38,8 +39,10 @@ class Site {
  public:
   Site(Block& block, Index& index);
   Site(Block& block, unsigned int i, unsigned int j, unsigned int k);
+  Site(UnifiedBlock& block, unsigned int i, unsigned int j, unsigned int k);
   bool IsFluidKnown;
   bool IsFluid;
+  bool IsHalo;
   std::vector<LinkData> Links;
   Vector Position;
   bool WallNormalAvailable;  ///< Whether an approximation of the wall normal is
