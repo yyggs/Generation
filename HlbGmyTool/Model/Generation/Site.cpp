@@ -162,6 +162,9 @@ bool LaterNeighbourIterator::IsCurrentValid() {
   Index neighIndex = this->site->index + GetVector();
 
   if (this->IsCurrentInDomain()) {
+    if(this->site->block.GetSite(neighIndex).IsHalo){
+      return true;
+    }
     // neighbour's in the domain, check it's block
     int siteBlockIjk = this->domain->TranslateIndex(this->site->block.index);
     int neighBlockIjk =
