@@ -102,35 +102,6 @@ BlockIterator& BlockIterator::operator++() {
   // Note it is an error to increment an iterator past it's end, so we don't
   // need to handle that case.
   int pos;
-  // Delete any unnecessary blocks
-  for (int i = this->current[0] - 1; i < this->current[0] + 1; ++i) {
-    if (i < 0)
-      continue;
-    if (i == this->current[0] && i != this->maxima[0])
-      continue;
-
-    for (int j = this->current[1] - 1; j < this->current[1] + 1; ++j) {
-      if (j < 0)
-        continue;
-      if (j == this->current[1] && j != this->maxima[1])
-        continue;
-
-      for (int k = this->current[2] - 1; k < this->current[2] + 1; ++k) {
-        if (k < 0)
-          continue;
-        if (k == this->current[2] && k != this->maxima[2])
-          continue;
-
-        // This block can no longer be reached from the current or later
-        // blocks, so delete, and set pointer to null
-        pos = this->domain->TranslateIndex(i, j, k);
-        // Print the delete order
-        //Log() << "Deleting block " << i << " " << j << " " << k << std::endl;
-        delete this->domain->blocks[pos];
-        this->domain->blocks[pos] = NULL;
-      }
-    }
-  }
 
   // Update the index vector
   this->current[2] += 1;

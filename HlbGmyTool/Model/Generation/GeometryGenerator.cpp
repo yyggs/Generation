@@ -57,7 +57,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
     Block& block = *blockIt;
     blockCount++;
-
     Site& startSite = *block.begin();
 
     this->ComputeStartingSite(startSite);
@@ -114,6 +113,8 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
     blockWriterPtr->Finish();
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
+    delete &block;
+    // nullptr the block pointer to avoid double deletion !!!!
   }
   file.close();
   writer.Close();

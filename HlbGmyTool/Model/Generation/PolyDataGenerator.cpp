@@ -403,15 +403,6 @@ void PolyDataGenerator::ClassifySite(Site& site) {
         link.DistanceInVoxels = distanceInVoxels;
       }
     }
-    // Log() << "Block" << site.GetBlock().GetIndex() << " Site" << site.GetIndex()
-    //       << " is " << (site.IsFluid ? "fluid" : "solid") << " and block"
-    //       << neigh.GetBlock().GetIndex() << " site" << neigh.GetIndex() << " is "
-    //       << (neigh.IsFluid ? "fluid" : "solid") << std::endl;
-
-    // if(site.Position[0] == 0 && site.Position[1] == 0 && site.Position[2] == 128.5){
-    //   Log() << "Site at " << site.Position[0] << " " << site.Position[1] << " " << site.Position[2] << " is " << (site.IsFluid ? "fluid" : "solid") << std::endl;
-    // }
-
   }
 
   // If there's enough information available, an approximation of the wall
