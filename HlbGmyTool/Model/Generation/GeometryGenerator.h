@@ -18,6 +18,7 @@ class Site;
 class BlockWriter;
 class Block;
 class Domain;
+class BlockIterator;
 
 class GeometryGenerator {
  public:
@@ -46,7 +47,6 @@ class GeometryGenerator {
     this->SiteCounts[0] = x;
     this->SiteCounts[1] = y;
     this->SiteCounts[2] = z;
-    //Log() << "x y z = " << x << " " << y << " " << z << std::endl; 
   }
 
   /**
@@ -62,6 +62,8 @@ class GeometryGenerator {
   void ComputeAveragedNormal(Site& site) const;
 
  protected:
+  void ProcessBlock(BlockIterator blockIt, GeometryWriter& writer, 
+        std::ofstream& file, bool skipNonIntersectingBlocks);
   virtual void ComputeBounds(double[]) const = 0;
   virtual void PreExecute(void);
   virtual void ClassifySite(Site& site) = 0;

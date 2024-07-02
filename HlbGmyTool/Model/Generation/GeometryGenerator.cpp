@@ -42,7 +42,6 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   GeometryWriter writer(this->OutputGeometryFile, domain.GetBlockSize(),
                         domain.GetBlockCounts());
 
-  int blockCount = 0;
   std::ofstream file("HaloSites.txt"); 
   if (!file.is_open()) {
       std::cerr << "Failed to open file.\n";
@@ -51,23 +50,30 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
 
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
+    this->ProcessBlock(blockIt, writer, file, skipNonIntersectingBlocks);
+  }
+  file.close();
+  writer.Close();
+  __itt_pause();
+}
+
+void GeometryGenerator::ProcessBlock(BlockIterator blockIt, GeometryWriter& writer, 
+    std::ofstream& file, bool skipNonIntersectingBlocks) {
     // Open the BlockStarted context of the writer; this will
     // deal with flushing the state to the file (or not, in the
     // case where there are no fluid sites).
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
     Block& block = *blockIt;
-    blockCount++;
     Site& startSite = *block.begin();
 
     this->ComputeStartingSite(startSite);
 
-    int side = 0;  // represents whether the block is inside (-1) outside (+1)
-                   // or undetermined (0)
+    int side = 0;  // represents whether the block is inside (-1) outside (+1) or undetermined (0)
 
     if (skipNonIntersectingBlocks) {
-      side = this->BlockInsideOrOutsideSurface(block);
-    } else {  // don't use the optimisation -- check every site
-      side = 0;
+        side = this->BlockInsideOrOutsideSurface(block);
+    } else {
+        side = 0;
     }
 
     switch (side) {
@@ -77,13 +83,11 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case 0:
         // Block has some surface within it.
-        for (Block::InnerSiteIterator siteIt = block.begin(); siteIt != block.end();
-             ++siteIt) {
+        for (Block::InnerSiteIterator siteIt = block.begin(); siteIt != block.end(); ++siteIt) {
           Site& site = *siteIt;
           this->ClassifySite(site);
-          // here we should check site
           if (site.IsFluid) {
-            file << "Site " << site.GetIndex() << " is fluid" << std::endl;
+            file << "Site " << site.GetIndex() << " is fluid\n";
             blockWriterPtr->IncrementFluidSitesCount();
             WriteFluidSite(*blockWriterPtr, site);
           } else {
@@ -93,33 +97,26 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
         break;
       case -1:
         // Block is entirely inside the domain
-        for (Block::InnerSiteIterator siteIt = block.begin(); siteIt != block.end();
-             ++siteIt) {
+        for (Block::InnerSiteIterator siteIt = block.begin(); siteIt != block.end(); ++siteIt) {
           Site& site = *siteIt;
           site.IsFluidKnown = true;
           site.IsFluid = true;
           site.CreateLinksVector();
-          for (unsigned int link_index = 0; link_index < site.Links.size();
-               ++link_index) {
+          for (unsigned int link_index = 0; link_index < site.Links.size(); ++link_index) {
             site.Links[link_index].Type = geometry::CutType::NONE;
           }
           blockWriterPtr->IncrementFluidSitesCount();
           WriteFluidSite(*blockWriterPtr, site);
         }
         break;
-      default:
-        break;
     }
     blockWriterPtr->Finish();
     blockWriterPtr->Write(writer);
     delete blockWriterPtr;
     delete &block;
-    // nullptr the block pointer to avoid double deletion !!!!
-  }
-  file.close();
-  writer.Close();
-  __itt_pause();
 }
+
+
 
 void GeometryGenerator::WriteSolidSite(BlockWriter& blockWriter, Site& site) {
   blockWriter << static_cast<unsigned int>(geometry::SiteType::SOLID);

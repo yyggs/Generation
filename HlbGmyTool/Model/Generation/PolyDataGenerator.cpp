@@ -404,7 +404,6 @@ void PolyDataGenerator::ClassifySite(Site& site) {
       }
     }
   }
-
   // If there's enough information available, an approximation of the wall
   // normal will be computed for this fluid site.
   this->ComputeAveragedNormal(site);
