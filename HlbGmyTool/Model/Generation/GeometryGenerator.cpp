@@ -41,6 +41,7 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   Domain domain(this->OriginWorking, this->SiteCounts);
   GeometryWriter writer(this->OutputGeometryFile, domain.GetBlockSize(),
                         domain.GetBlockCounts());
+  
 
   std::ofstream file("HaloSites.txt"); 
   if (!file.is_open()) {
@@ -51,6 +52,13 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
     this->ProcessBlock(blockIt, writer, file, skipNonIntersectingBlocks);
+    if(!domain.CheckWritingDone()){
+      if(domain.CheckBlockReady()){
+        BlockWriter* blockWriterPtr = domain.GetBlockWriter();
+        blockWriterPtr->Write(writer);
+        delete blockWriterPtr;
+      }
+    }
   }
   file.close();
   writer.Close();
@@ -111,8 +119,8 @@ void GeometryGenerator::ProcessBlock(BlockIterator blockIt, GeometryWriter& writ
         break;
     }
     blockWriterPtr->Finish();
-    blockWriterPtr->Write(writer);
-    delete blockWriterPtr;
+    Index blockindex = block.GetIndex();
+    block.GetDomain().SetBlockWriter(blockindex, blockWriterPtr);
     delete &block;
 }
 

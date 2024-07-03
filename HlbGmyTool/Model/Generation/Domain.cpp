@@ -11,14 +11,12 @@
 Domain::Domain(double OriginWorking[3],
                unsigned SiteCounts[3],
                unsigned BlockSize)
-    : BlockSize(BlockSize) {
+    : BlockSize(BlockSize), BlockWritingNum(0) {
   int remainder, totalBlocks = 1;
 
   for (unsigned int i = 0; i < 3; ++i) {
     // Copy in
     this->OriginWorking[i] = OriginWorking[i];
-    // print originworking
-    // Log() << "OriginWorking[" << i << "] = " << OriginWorking[i] << std::endl;
 
     this->SiteCounts[i] = SiteCounts[i];
 
@@ -37,8 +35,10 @@ Domain::Domain(double OriginWorking[3],
   this->blocks.resize(totalBlocks);
   Log() << "Domain size " << this->BlockCounts << std::endl;
 
-  // Resize the starting sites status
-  //this->startingFluid.resize(totalBlocks);
+  this->blockWriters.resize(totalBlocks);
+  
+  this->blockready = new std::atomic<bool>[totalBlocks];
+
 }
 
 Vector Domain::CalcPositionWorkingFromIndex(const Index& index) const {

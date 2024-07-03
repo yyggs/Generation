@@ -7,6 +7,7 @@
 #define HEMELBSETUPTOOL_DOMAIN_H
 
 #include <vector>
+#include <atomic>
 
 #include "BlockWriter.h"
 #include "Index.h"
@@ -26,6 +27,9 @@ class Domain {
   int BlockSize;
 
   std::vector<Block*> blocks;
+  std::vector<BlockWriter*> blockWriters;
+  std::atomic<bool>* blockready;
+  int BlockWritingNum;
 
   friend class BlockIterator;
   friend class NeighbourIteratorBase;
@@ -55,6 +59,22 @@ class Domain {
   inline void SetBlockCounts(Index const& val) { BlockCounts = val; }
 
   inline Index const& GetSiteCounts() const { return SiteCounts; }
+  inline void SetBlockWriter(Index const& index, BlockWriter* writer) {
+    int blocknumber = index[2] + index[1] * BlockCounts[2] + index[0] * BlockCounts[1] * BlockCounts[2];
+    this->blockWriters[blocknumber] = writer;
+    this->blockready[blocknumber] = true;
+  }
+  inline bool CheckBlockReady() {
+    return this->blockready[this->BlockWritingNum];
+  }
+  inline BlockWriter* GetBlockWriter() {
+    return this->blockWriters[this->BlockWritingNum++];
+  }
+  inline bool CheckWritingDone() {
+    if(this->BlockWritingNum >= this->BlockCounts[0] * this->BlockCounts[1] * this->BlockCounts[2])
+      return true;
+    return false;
+  }
 
   /*
    * These TranslateIndex member functions translate between 3d and 1a
