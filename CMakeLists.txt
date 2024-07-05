@@ -89,6 +89,7 @@ set(gen_cpps
   SquareDuctGenerator.cpp
   Debug.cpp
   Wrap.cpp
+  Thread.cpp
 )
 list(TRANSFORM gen_cpps PREPEND "${generation_dir}/")
 

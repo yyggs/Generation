@@ -16,6 +16,7 @@
 #include <cassert>
 #include "io/formats/geometry.h"
 #include "ittnotify.h"
+#include "Thread.h"
 
 using namespace hemelb::io::formats;
 
@@ -43,30 +44,37 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
                         domain.GetBlockCounts());
   
 
-  std::ofstream file("HaloSites.txt"); 
-  if (!file.is_open()) {
-      std::cerr << "Failed to open file.\n";
-      return;
-  }
+
+  boost::asio::thread_pool pool(4);
 
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
-    this->ProcessBlock(blockIt, writer, file, skipNonIntersectingBlocks);
-    if(!domain.CheckWritingDone()){
-      if(domain.CheckBlockReady()){
-        BlockWriter* blockWriterPtr = domain.GetBlockWriter();
-        blockWriterPtr->Write(writer);
-        delete blockWriterPtr;
-      }
-    }
+      boost::asio::post(pool, [&](){
+        this->ProcessBlock(blockIt, writer, skipNonIntersectingBlocks);
+    });
   }
-  file.close();
+  boost::asio::post(pool, [&](){
+    this->CheckWriting(domain, writer);
+  });
+  pool.join();
   writer.Close();
   __itt_pause();
 }
 
+void GeometryGenerator::CheckWriting(Domain& domain, GeometryWriter& writer) {
+  while(!domain.CheckWritingDone()){
+    if(domain.CheckBlockReady()){
+      //Log() << "Writing block " << domain.BlockWritingNum << std::endl;
+      BlockWriter* blockWriterPtr = domain.GetBlockWriter();
+      blockWriterPtr->Write(writer);
+      delete blockWriterPtr;
+    }
+  }
+}
+
+
 void GeometryGenerator::ProcessBlock(BlockIterator blockIt, GeometryWriter& writer, 
-    std::ofstream& file, bool skipNonIntersectingBlocks) {
+    bool skipNonIntersectingBlocks) {
     // Open the BlockStarted context of the writer; this will
     // deal with flushing the state to the file (or not, in the
     // case where there are no fluid sites).
@@ -95,7 +103,6 @@ void GeometryGenerator::ProcessBlock(BlockIterator blockIt, GeometryWriter& writ
           Site& site = *siteIt;
           this->ClassifySite(site);
           if (site.IsFluid) {
-            file << "Site " << site.GetIndex() << " is fluid\n";
             blockWriterPtr->IncrementFluidSitesCount();
             WriteFluidSite(*blockWriterPtr, site);
           } else {

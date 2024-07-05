@@ -8,6 +8,8 @@
 
 #include <string>
 #include <vector>
+#include <boost/asio.hpp>
+#include <iostream>
 
 #include "GenerationError.h"
 #include "Iolet.h"
@@ -63,7 +65,7 @@ class GeometryGenerator {
 
  protected:
   void ProcessBlock(BlockIterator blockIt, GeometryWriter& writer, 
-        std::ofstream& file, bool skipNonIntersectingBlocks);
+        bool skipNonIntersectingBlocks);
   virtual void ComputeBounds(double[]) const = 0;
   virtual void PreExecute(void);
   virtual void ClassifySite(Site& site) = 0;
@@ -78,6 +80,7 @@ class GeometryGenerator {
   std::vector<Iolet> Iolets;
   virtual int BlockInsideOrOutsideSurface(const Block& block) = 0;
   void ComputeStartingSite(Site& startSite);
+  void CheckWriting(Domain& domain, GeometryWriter& writer);
 };
 
 #endif  // HEMELBSETUPTOOL_GEOMETRYGENERATOR_H
