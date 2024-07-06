@@ -4,7 +4,6 @@
 // license in the file LICENSE.
 
 #include <cstdio>
-
 #include <zlib.h>
 
 #include "BlockWriter.h"

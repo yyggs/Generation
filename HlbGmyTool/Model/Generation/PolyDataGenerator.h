@@ -25,6 +25,14 @@ class BlockWriter;
 #include "BuildCGALPolygon.h"
 #include "CGALtypedef.h"
 
+struct ThreadLocalData {
+    vtkSmartPointer<vtkPoints> hitPoints;
+    vtkSmartPointer<vtkIdList> hitCellIds;
+    std::vector<Object_and_primitive_id> hitCellIdsCGAL;
+    std::vector<Object_Primitive_and_distance> IntersectionCGAL;
+};
+
+
 class PolyDataGenerator : public GeometryGenerator {
  public:
   PolyDataGenerator();
@@ -72,14 +80,12 @@ class PolyDataGenerator : public GeometryGenerator {
   vtkSmartPointer<vtkOBBTree> Locator;
   std::unique_ptr<Polyhedron> ClippedCGALSurface;
   std::unique_ptr<Tree> AABBtree;
+  vtkSmartPointer<vtkIntArray> IoletIdArray;
   // PointInside *inside_with_ray;
   // Members used internally
-  vtkSmartPointer<vtkPoints> hitPoints;
-  vtkSmartPointer<vtkIdList> hitCellIds;
-  std::vector<Object_and_primitive_id> hitCellIdsCGAL;
-  std::vector<Object_Primitive_and_distance> IntersectionCGAL;
-  vtkSmartPointer<vtkIntArray> IoletIdArray;
-  std::vector<PointCGAL> HitPointsCGAL;
+  static thread_local ThreadLocalData tlData;
+
+  //std::vector<PointCGAL> HitPointsCGAL;
   int Intersect(Site& site, Site& neigh);
   static bool distancesort(const Object_Primitive_and_distance i,
                            const Object_Primitive_and_distance j);

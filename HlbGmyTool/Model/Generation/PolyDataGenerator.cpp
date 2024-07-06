@@ -39,14 +39,17 @@
 #include "Block.h"
 
 using namespace hemelb::io::formats;
+thread_local ThreadLocalData PolyDataGenerator::tlData;
 
 PolyDataGenerator::PolyDataGenerator()
     : GeometryGenerator(), ClippedSurface(NULL) {
   this->Locator = vtkOBBTree::New(); 
   // this->Locator->SetNumberOfCellsPerNode(32); // the default
   this->Locator->SetTolerance(1e-9);
-  this->hitPoints = vtkPoints::New();
-  this->hitCellIds = vtkIdList::New();
+  tlData.hitPoints = vtkSmartPointer<vtkPoints>::New();
+  tlData.hitCellIds = vtkSmartPointer<vtkIdList>::New();
+  tlData.hitCellIdsCGAL.clear();
+  tlData.IntersectionCGAL.clear();
 }
 
 PolyDataGenerator::~PolyDataGenerator() {}
@@ -259,7 +262,7 @@ void PolyDataGenerator::ClassifySite(Site& site) {
 
       // Index of the solid site from the fluid site.
       int iSolid;
-      // Index of the point in this->hitPoints we're considering as the
+      // Index of the point in tlData.hitPoints we're considering as the
       // hit of interest (i.e. the one closest to the fluid site).
       int iHit;
 
@@ -279,9 +282,9 @@ void PolyDataGenerator::ClassifySite(Site& site) {
           // here we iterate over all intersections until we
           // find a wall or the rest are futher away than the tol.
           for (std::vector<Object_Primitive_and_distance>::iterator distit =
-                   IntersectionCGAL.begin();
-               distit != IntersectionCGAL.end(); ++distit) {
-            if (distit->second > IntersectionCGAL[0].second + distancetol) {
+                   tlData.IntersectionCGAL.begin();
+               distit != tlData.IntersectionCGAL.end(); ++distit) {
+            if (distit->second > tlData.IntersectionCGAL[0].second + distancetol) {
               iHit = n;
               break;
             }
@@ -297,12 +300,12 @@ void PolyDataGenerator::ClassifySite(Site& site) {
           fluid = &neigh;
           solid = &site;
           iSolid = Neighbours::inverses[iNeigh];
-          int n = IntersectionCGAL.size() - 1;
+          int n = tlData.IntersectionCGAL.size() - 1;
           iHit = n;
           for (std::vector<Object_Primitive_and_distance>::reverse_iterator
-                   distit = IntersectionCGAL.rbegin();
-               distit != IntersectionCGAL.rend(); ++distit) {
-            if (distit->second < IntersectionCGAL.back().second - distancetol) {
+                   distit = tlData.IntersectionCGAL.rbegin();
+               distit != tlData.IntersectionCGAL.rend(); ++distit) {
+            if (distit->second < tlData.IntersectionCGAL.back().second - distancetol) {
               iHit = n;
               break;  // ignoring the following intersections, they are to far
                       // away.
@@ -330,7 +333,7 @@ void PolyDataGenerator::ClassifySite(Site& site) {
         }
       }
       Object_Primitive_and_distance hitpoint_triangle_dist =
-          IntersectionCGAL[iHit];
+          tlData.IntersectionCGAL[iHit];
 
       if (CGAL::assign(hitPointCGAL, hitpoint_triangle_dist.first.first)) {
         // we do an explicite cast to double here.
@@ -507,8 +510,8 @@ bool PolyDataGenerator::InsideOutside(Site& site) {
 
 int PolyDataGenerator::ComputeIntersections(Site& from, Site& to) {
   this->Locator->IntersectWithLine(&from.Position[0], &to.Position[0],
-                                   this->hitPoints, this->hitCellIds);
-  int hitpoints = this->hitPoints->GetNumberOfPoints();
+                                   tlData.hitPoints, tlData.hitCellIds);
+  int hitpoints = tlData.hitPoints->GetNumberOfPoints();
 
   return hitpoints;
 }
@@ -527,16 +530,16 @@ int PolyDataGenerator::ComputeIntersectionsCGAL(Site& from, Site& to) {
   int ori[5];
   int nHitsCGAL =
       this->AABBtree->number_of_intersected_primitives(segment_query);
-  this->hitCellIdsCGAL.clear();
-  this->IntersectionCGAL.clear();
+  tlData.hitCellIdsCGAL.clear();
+  tlData.IntersectionCGAL.clear();
   this->AABBtree->all_intersections(segment_query,
-                                    std::back_inserter(this->hitCellIdsCGAL));
+                                    std::back_inserter(tlData.hitCellIdsCGAL));
   Object_Primitive_and_distance OPD;
 
   if (nHitsCGAL) {
     for (std::vector<Object_and_primitive_id>::iterator i =
-             this->hitCellIdsCGAL.begin();
-         i != this->hitCellIdsCGAL.end(); ++i) {
+             tlData.hitCellIdsCGAL.begin();
+         i != tlData.hitCellIdsCGAL.end(); ++i) {
       f = i->second;
 
       v1 = f->halfedge()->vertex()->point();
@@ -552,7 +555,7 @@ int PolyDataGenerator::ComputeIntersectionsCGAL(Site& from, Site& to) {
         double distance =
             CGAL::to_double(CGAL::sqrt(CGAL::squared_distance(hitpoint, p1)));
         OPD = std::make_pair(*i, distance);
-        this->IntersectionCGAL.push_back(OPD);
+        tlData.IntersectionCGAL.push_back(OPD);
       } else if (CGAL::assign(hitsegment, i->first)) {
         double distance1 = CGAL::to_double(
             CGAL::sqrt(CGAL::squared_distance(hitsegment.vertex(0), p1)));
@@ -560,7 +563,7 @@ int PolyDataGenerator::ComputeIntersectionsCGAL(Site& from, Site& to) {
             CGAL::sqrt(CGAL::squared_distance(hitsegment.vertex(1), p1)));
         double distance = (distance1 + distance2) / 2;
         OPD = std::make_pair(*i, distance);
-        this->IntersectionCGAL.push_back(OPD);
+        tlData.IntersectionCGAL.push_back(OPD);
       } else {
         throw GenerationErrorMessage(
             "This type of intersection should not happen");
@@ -578,7 +581,7 @@ int PolyDataGenerator::ComputeIntersectionsCGAL(Site& from, Site& to) {
   }
 
   if (nHitsCGAL != 1) {
-    std::sort(this->IntersectionCGAL.begin(), this->IntersectionCGAL.end(),
+    std::sort(tlData.IntersectionCGAL.begin(), tlData.IntersectionCGAL.end(),
               distancesort);
   }
   return nHitsCGAL;

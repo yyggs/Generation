@@ -49,8 +49,9 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
 
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
+      Block& block = *blockIt;
       boost::asio::post(pool, [&](){
-        this->ProcessBlock(blockIt, writer, skipNonIntersectingBlocks);
+        this->ProcessBlock(block, writer, skipNonIntersectingBlocks);
     });
   }
   boost::asio::post(pool, [&](){
@@ -73,13 +74,12 @@ void GeometryGenerator::CheckWriting(Domain& domain, GeometryWriter& writer) {
 }
 
 
-void GeometryGenerator::ProcessBlock(BlockIterator blockIt, GeometryWriter& writer, 
+void GeometryGenerator::ProcessBlock(Block& block, GeometryWriter& writer, 
     bool skipNonIntersectingBlocks) {
     // Open the BlockStarted context of the writer; this will
     // deal with flushing the state to the file (or not, in the
     // case where there are no fluid sites).
     BlockWriter* blockWriterPtr = writer.StartNextBlock();
-    Block& block = *blockIt;
     Site& startSite = *block.begin();
 
     this->ComputeStartingSite(startSite);
@@ -128,7 +128,7 @@ void GeometryGenerator::ProcessBlock(BlockIterator blockIt, GeometryWriter& writ
     blockWriterPtr->Finish();
     Index blockindex = block.GetIndex();
     block.GetDomain().SetBlockWriter(blockindex, blockWriterPtr);
-    delete &block;
+    //delete &block;
 }
 
 

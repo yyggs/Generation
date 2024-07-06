@@ -64,7 +64,7 @@ class GeometryGenerator {
   void ComputeAveragedNormal(Site& site) const;
 
  protected:
-  void ProcessBlock(BlockIterator blockIt, GeometryWriter& writer, 
+  void ProcessBlock(Block& block, GeometryWriter& writer, 
         bool skipNonIntersectingBlocks);
   virtual void ComputeBounds(double[]) const = 0;
   virtual void PreExecute(void);
