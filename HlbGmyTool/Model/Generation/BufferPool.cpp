@@ -9,6 +9,7 @@
 BufferPool::BufferPool(unsigned int bSize) : size(bSize) {}
 
 BufferPool::~BufferPool() {
+  std::lock_guard<std::mutex> lock(mutex);
   // Clear the stack
   while (!this->unused.empty()) {
     delete[] this->unused.top();
@@ -17,6 +18,7 @@ BufferPool::~BufferPool() {
 }
 
 char* BufferPool::New() {
+  std::lock_guard<std::mutex> lock(mutex);
   // If the stack is empty, create a new array, otherwise pop an array
   if (this->unused.empty()) {
     return new char[this->size];
@@ -31,6 +33,7 @@ void BufferPool::Free(char* buf) {
   // If the buffer is NULL, skip
   if (buf == NULL)
     return;
+  std::lock_guard<std::mutex> lock(mutex);
   // If we have fewer than 10, add this one to the unused, otherwise delete it
   if (this->unused.size() < 10) {
     this->unused.push(buf);
@@ -41,5 +44,6 @@ void BufferPool::Free(char* buf) {
 
 // Return the size of buffers handled.
 unsigned int BufferPool::GetSize() const {
+  std::lock_guard<std::mutex> lock(mutex);
   return this->size;
 }

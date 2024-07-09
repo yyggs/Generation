@@ -6,6 +6,7 @@
 #ifndef HEMELBSETUPTOOL_BUFFERPOOL_H
 #define HEMELBSETUPTOOL_BUFFERPOOL_H
 #include <stack>
+#include <mutex>
 
 // Allocates and frees or reuses buffers of a given size.
 class BufferPool {
@@ -23,6 +24,7 @@ class BufferPool {
  private:
   unsigned int size;
   std::stack<char*> unused;
+  mutable std::mutex mutex;
 };
 
 #endif

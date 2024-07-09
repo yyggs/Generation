@@ -130,5 +130,5 @@ BlockIterator::reference BlockIterator::operator*() {
 }
 
 BlockIterator::pointer BlockIterator::operator->() {
-  return &(*(*this));
+  return &this->domain->GetBlock(this->current);
 }

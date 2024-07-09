@@ -45,16 +45,14 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
   
 
 
-  boost::asio::thread_pool pool(10);
+  boost::asio::thread_pool pool(8);
+  boost::asio::post(pool, [&](){
+          this->CheckWriting(domain, writer);
+        });
 
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
       Block& block = *blockIt;
-      if(block.GetIndex() == domain.GetBlockCounts() / 2){
-        boost::asio::post(pool, [&](){
-          this->CheckWriting(domain, writer);
-        });
-      }
       boost::asio::post(pool, [&](){
         this->ProcessBlock(block, writer, skipNonIntersectingBlocks);
     });
@@ -131,7 +129,8 @@ void GeometryGenerator::ProcessBlock(Block& block, GeometryWriter& writer,
     blockWriterPtr->Finish();
     Index blockindex = block.GetIndex();
     block.GetDomain().SetBlockWriter(blockindex, blockWriterPtr);
-    delete &block;
+    block.GetDomain().DeleteBlock(blockindex);
+    //delete &block;
 }
 
 

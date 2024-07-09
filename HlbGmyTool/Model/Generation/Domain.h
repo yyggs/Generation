@@ -13,8 +13,8 @@
 #include "Index.h"
 #include "Debug.h"
 
-class Block;
-class Site;
+#include "Block.h"
+#include "Site.h"
 class BlockIterator;
 
 // Note that the "working" units for this are voxels.
@@ -58,6 +58,10 @@ class Domain {
 
   inline Index const& GetBlockCounts() const { return BlockCounts; }
   inline void SetBlockCounts(Index const& val) { BlockCounts = val; }
+  inline void DeleteBlock(Index& ind){
+    delete this->blocks[this->TranslateIndex(ind)];
+    this->blocks[this->TranslateIndex(ind)] = nullptr;
+  }
 
   inline Index const& GetSiteCounts() const { return SiteCounts; }
   inline void SetBlockWriter(Index const& index, BlockWriter* writer) {
@@ -69,7 +73,6 @@ class Domain {
     return this->blockready[this->BlockWritingNum];
   }
   inline BlockWriter* GetBlockWriter() {
-    //Log() << "Getting block writer " << this->BlockWritingNum << std::endl;
     return this->blockWriters[this->BlockWritingNum++];
   }
   inline bool CheckWritingDone() {
