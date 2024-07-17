@@ -52,8 +52,9 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
 
   for (BlockIterator blockIt = domain.begin(); blockIt != domain.end();
        ++blockIt) {
-      Block& block = *blockIt;
-      boost::asio::post(pool, [&](){
+      BlockIterator copyIt = blockIt;
+      boost::asio::post(pool, [copyIt, this, &writer, skipNonIntersectingBlocks]() mutable{
+        Block& block = *copyIt; 
         this->ProcessBlock(block, writer, skipNonIntersectingBlocks);
     });
   }
