@@ -44,8 +44,19 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
                         domain.GetBlockCounts());
   
 
+  const char* env_p = std::getenv("GMY_TOOL_THREADS");
+  int num_threads = 8; 
 
-  boost::asio::thread_pool pool(8);
+  if (env_p != nullptr) {
+      try {
+          num_threads = std::stoi(env_p); 
+      } catch (const std::exception& e) {
+          std::cerr << "Invalid thread count provided in GMY_TOOL_THREADS: " << e.what() << '\n';
+          return ;  
+      }
+  }
+  boost::asio::thread_pool pool(num_threads);
+  Log() << "Using " << num_threads << " threads" << std::endl;
   boost::asio::post(pool, [&](){
           this->CheckWriting(domain, writer);
         });
@@ -66,12 +77,11 @@ void GeometryGenerator::Execute(bool skipNonIntersectingBlocks) {
 
 void GeometryGenerator::CheckWriting(Domain& domain, GeometryWriter& writer) {
   while(!domain.CheckWritingDone()){
-    if(domain.CheckBlockReady()){
-      //Log() << "Writing block " << domain.BlockWritingNum << std::endl;
-      BlockWriter* blockWriterPtr = domain.GetBlockWriter();
-      blockWriterPtr->Write(writer);
-      delete blockWriterPtr;
-    }
+    domain.AtomicWait();
+    //Log() << "Writing block " << domain.BlockWritingNum << std::endl;
+    BlockWriter* blockWriterPtr = domain.GetBlockWriter();
+    blockWriterPtr->Write(writer);
+    delete blockWriterPtr;
   }
 }
 
@@ -131,7 +141,6 @@ void GeometryGenerator::ProcessBlock(Block& block, GeometryWriter& writer,
     Index blockindex = block.GetIndex();
     block.GetDomain().SetBlockWriter(blockindex, blockWriterPtr);
     block.GetDomain().DeleteBlock(blockindex);
-    //delete &block;
 }
 
 

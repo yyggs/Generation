@@ -10,6 +10,7 @@
 #include <vector>
 #include <boost/asio.hpp>
 #include <iostream>
+#include <cstdlib>
 
 #include "GenerationError.h"
 #include "Iolet.h"

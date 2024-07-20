@@ -68,9 +68,13 @@ class Domain {
     int blocknumber = index[2] + index[1] * BlockCounts[2] + index[0] * BlockCounts[1] * BlockCounts[2];
     this->blockWriters[blocknumber] = writer;
     this->blockready[blocknumber] = true;
+    this->blockready[blocknumber].notify_one();
   }
   inline bool CheckBlockReady() {
     return this->blockready[this->BlockWritingNum];
+  }
+  inline void AtomicWait(){
+    blockready[this->BlockWritingNum].wait(false);
   }
   inline BlockWriter* GetBlockWriter() {
     return this->blockWriters[this->BlockWritingNum++];
